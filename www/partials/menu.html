@@ -1,0 +1,30 @@
+<div class="row" ng-show="showList">
+    <div class="col-lg-12 text-center">
+        <h3 class="titulo">Menú</h3>
+        <hr>
+    </div>
+</div>
+<div class="row" ng-show="showList">
+    <div class="col-lg-12 text-center">
+        <a ng-click="showMenu(1)" data-transition="flip"><img style="width: 80%" src="img/entradas.png"></a>
+        <a ng-click="showMenu(2)" data-transition="flip"><img style="width: 80%" src="img/platosfuertes.png"></a>
+        <a ng-click="showMenu(3)" data-transition="flip"><img style="width: 80%" src="img/picadas.png"></a>
+        <a ng-click="showMenu(4)" data-transition="flip"><img style="width: 80%" src="img/combos.png"></a>
+        <a ng-click="showMenu(5)" data-transition="flip"><img style="width: 80%" src="img/ensaladas.png"></a>
+        <a ng-click="showMenu(6)" data-transition="flip"><img style="width: 80%" src="img/bebidas.png"></a>
+        <a ng-click="showMenu(7)" data-transition="flip"><img style="width: 80%" src="img/cervezas.png"></a>
+        <a ng-click="showMenu(8)" data-transition="flip"><img style="width: 80%" src="img/pasantes.png"></a>
+        <a ng-click="showMenu(9)" data-transition="flip"><img style="width: 80%" src="img/licores.png"></a>
+        <a ng-click="showMenu(10)" data-transition="flip"><img style="width: 80%" src="img/cocteles.png"></a>
+        <a ng-click="showMenu(11)" data-transition="flip"><img style="width: 80%" src="img/shots.png"></a>
+    </div>
+</div>
+<div class="row" ng-show="!showList">
+    <img src="{{url}}" class="rounded mx-auto d-block" alt="Responsive image" width="100%" height="100%">
+</div>
+<div class="row" ng-show="!showList">
+    <div class="col-lg-12">
+        <hr>
+        <a type="button" ng-click="atras()" class="btnporto">Atrás</a>
+    </div>
+</div>

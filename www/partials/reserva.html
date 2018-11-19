@@ -1,0 +1,95 @@
+<div class="row">
+    <div class="col-lg-12">
+        <form action="">
+            <div class="form-group" ng-class="{'obligatorio': errores.tdecoracion}">
+                <label class="label_form control-label">Decoraci&oacute;n:</label>
+                <div data-role="controlgroup" id="div_promos"></div>
+                <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.tdecoracion">{{errores.tdecoracion}}</small>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errores.fecha}">
+                <label class="label_form">Fecha de reserva:</label>
+                <input type="date" class="form-control" name="fecha_reserva" id="fecha_reserva" class="form-control"
+                    onchange="mesas()" ng-model="obj.fecha">
+                <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.fecha">{{errores.fecha}}</small>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errores.hora}">
+                <label class="label_form">Hora de reserva:</label>
+                <select id="hora_reserva" name="hora_reserva" class="form-control" data-native-menu="false" data-theme="a" required="required"
+                    ng-model="obj.hora" ng-change="loadMesas()">
+                    <option value="">Selec. hora</option>
+                    <option value="00:00:00">12:00 MN</option>
+                    <option value="1:00:00">1:00 AM</option>
+                    <option value="2:00:00">2:00 AM</option>
+                    <option value="3:00:00">3:00 AM</option>
+                    <option value="4:00:00">4:00 AM</option>
+                    <option value="5:00:00">5:00 AM</option>
+                    <option value="6:00:00">6:00 AM</option>
+                    <option value="7:00:00">7:00 AM</option>
+                    <option value="8:00:00">8:00 AM</option>
+                    <option value="9:00:00">9:00 AM</option>
+                    <option value="10:00:00">10:00 AM</option>
+                    <option value="11:00:00">11:00 AM</option>
+                    <option value="12:00:00">12:00 MD</option>
+                    <option value="13:00:00">1:00 PM</option>
+                    <option value="14:00:00">2:00 PM</option>
+                    <option value="15:00:00">3:00 PM</option>
+                    <option value="16:00:00">4:00 PM</option>
+                    <option value="17:00:00">5:00 PM</option>
+                    <option value="18:00:00">6:00 PM</option>
+                    <option value="19:00:00">7:00 PM</option>
+                    <option value="20:00:00">8:00 PM</option>
+                    <option value="21:00:00">9:00 PM</option>
+                    <option value="22:00:00">10:00 PM</option>
+                    <option value="23:00:00">11:00 PM</option>
+                </select>
+                <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.hora">{{errores.hora}}</small>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errores.hora}">
+                <label class="label_form">Mesas disponibles:</label>
+                <div id="div_mesas">
+
+                </div>
+                <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.mesa">{{errores.mesa}}</small>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errores.nropersonas}">
+                <label class="label_form">Número de Personas:</label>
+                <select name="personas" id="personas" required="required" class="form-control" ng-model="obj.nropersonas" data-native-menu="false" data-theme="a">
+                    <!--  onchange="ejecutar_ajax()" -->
+                    <option value="" selected="selected">N&uacute;mero de personas....</option>
+                    <option value="1">1 Persona</option>
+                    <option value="2">2 Personas</option>
+                    <option value="3">3 Personas</option>
+                    <option value="4">4 Personas</option>
+                    <option value="5">5 Personas</option>
+                    <option value="6">6 Personas</option>
+                    <option value="7">7 Personas</option>
+                    <option value="8">8 Personas</option>
+                    <option value="9">9 Personas</option>
+                    <option value="10">10 Personas</option>
+                    <option value="11">11 Personas</option>
+                    <option value="12">12 Personas</option>
+                    <option value="13">13 Personas</option>
+                    <option value="14">14 Personas</option>
+                    <option value="15">15 Personas</option>
+                    <option value="16">16 Personas</option>
+                    <option value="17">17 Personas</option>
+                    <option value="18">18 Personas</option>
+                    <option value="19">19 Personas</option>
+                    <option value="20">20 Personas</option>
+                </select>
+                <small class="form-text text-muted obligatorio" ng-show="errores.nropersonas">{{errores.nropersonas}}</small>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errores.motivo}">
+                <label class="label_form">Motivo :</label>
+                <input type="text" class="form-control" name="txtmotivo" id="txtmotivo" class="form-control"
+                    ng-model="obj.motivo">
+                <small class="form-text text-muted obligatorio" ng-show="errores.motivo">{{errores.motivo}}</small>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-12">
+        <hr>
+        <a type="button" ng-click="saveReserva()" class="btnporto">Reservar</a>
+        <a type="button" ng-click="cancelar()" class="btnporto">Cancelar</a>
+    </div>
+</div>
