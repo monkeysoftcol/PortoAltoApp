@@ -12,7 +12,14 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "co.com.portoalto"
+    },
+    "cordova-plugin-hidden-statusbar": {
+      "PACKAGE_NAME": "co.com.portoalto"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "co.com.portoalto"
+    }
+  }
 }

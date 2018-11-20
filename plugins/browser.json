@@ -12,7 +12,14 @@
     },
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-hidden-statusbar": {
+      "PACKAGE_NAME": "co.com.portoalto"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "co.com.portoalto"
+    }
+  }
 }
