@@ -17,7 +17,8 @@ var module = angular.module("Pasoporto",["ngRoute","ngStorage"]).
         a.when('/promo', {templateUrl: 'partials/promociones.html', controller: 'promoCtrl'});
         a.when('/about', {templateUrl: 'partials/about.html', controller: 'aboutCtrl'});
         a.when('/reserva', {templateUrl: 'partials/reserva.html', controller: 'reservaCtrl'});
-
+        a.when('/mireserva', {templateUrl: 'partials/mireserva.html', controller: 'miReservaCtrl'});
+        a.when('/calificar', {templateUrl: 'partials/calificar.html', controller: 'calificarCtrl'});
         a.otherwise({redirectTo:"/home"});
     }]).directive('capitalize', function () {
             return {
