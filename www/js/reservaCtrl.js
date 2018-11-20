@@ -3,7 +3,7 @@ module.controller('reservaCtrl', ['$scope', '$http','$localStorage', function ($
     $("html, body").animate({ scrollTop: 0 }, 600);
 
     console.log("reserva....");
-    $scope.url = "http://www.portoalto.com.co/webservice.php?opc=3";
+    $scope.url = "http://www.portoalto.com.co/webservice.php?opc=3";//decoración
     $scope.urlb = "http://www.portoalto.com.co/webservice.php?opc=4";
     $scope.urlc = "http://www.portoalto.com.co/webservice.php?opc=6";
 
@@ -12,6 +12,7 @@ module.controller('reservaCtrl', ['$scope', '$http','$localStorage', function ($
     $scope.formSend = false;
     $scope.promociones = '';
     $scope.listaMesas;
+    $scope.listDecoracion=[];
 
     $scope.loadpromociones = function () {
         $('#msgEsperaM').html("Consultado...");
