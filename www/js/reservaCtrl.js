@@ -1,6 +1,7 @@
 module.controller('reservaCtrl', ['$scope', '$http','$localStorage', function ($scope, $http,$localStorage) {
 
     $("html, body").animate({ scrollTop: 0 }, 600);
+    baseController($scope,$localStorage);
 
     console.log("reserva....");
     $scope.url = "http://www.portoalto.com.co/webservice.php?opc=3";//decoración
