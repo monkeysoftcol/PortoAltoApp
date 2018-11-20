@@ -22,7 +22,8 @@
         "plugins": {
             "cordova-plugin-whitelist": {},
             "cordova-plugin-camera": {},
-            "cordova-plugin-hidden-statusbar": {}
+            "cordova-plugin-hidden-statusbar": {},
+            "cordova-plugin-statusbar": {}
         },
         "platforms": [
             "browser",
