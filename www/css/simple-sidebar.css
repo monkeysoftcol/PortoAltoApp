@@ -47,8 +47,10 @@ body {
   margin-bottom: 20px;
   position: absolute;
   padding: 15px;
-  background: url("../img/fondog.jpg"); no-repeat fixed center;
-  
+  background: url("../img/fondog.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #wrapper.toggled #page-content-wrapper {
