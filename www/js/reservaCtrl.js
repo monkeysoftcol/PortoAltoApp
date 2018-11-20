@@ -52,8 +52,6 @@ module.controller('reservaCtrl', ['$scope', '$http','$localStorage', function ($
     };
 
     $scope.saveReserva = function () {
-        $localStorage.cedula = 123456789;
-
         $scope.obj.cedula = $localStorage.cedula;
         var error = false;
         $scope.obj.decora = document.getElementById("decora").value;
