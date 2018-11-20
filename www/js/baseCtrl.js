@@ -1,7 +1,7 @@
 
 function baseController($scope,$localStorage) {
     $scope.listaMenu = [];
-    $localStorage.cedula = '123456789';
+    $localStorage.cedula = 123456789;
 
     $scope.listarMenu = function (user) {
         if (!user) {
