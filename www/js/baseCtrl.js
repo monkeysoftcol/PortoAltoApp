@@ -17,7 +17,7 @@ function baseController($scope,$localStorage) {
             ];
         } else {
             $scope.listaMenu = [
-                { "url": "#/home", "texto": "Mi Ultima Reserva" },
+                { "url": "#/mireserva", "texto": "Mi Ultima Reserva" },
                 { "url": "", "texto": "Calificar Servicio" },
                 { "url": "", "texto": "Cerrar Sesión" }
             ];
