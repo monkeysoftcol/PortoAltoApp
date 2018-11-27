@@ -22,5 +22,7 @@ module.controller('homeCtrl', ['$scope', '$http', '$localStorage', function ($sc
         });
     }
     //$scope.loadinfo();
+
+    $scope.string = 'Carlos Cepeda - 1124850065';
     
 }]);

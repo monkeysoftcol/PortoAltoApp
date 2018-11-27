@@ -7,7 +7,7 @@
  }*/
 
 // Declare app level module which depends on filters, and services
-var module = angular.module("Pasoporto",["ngRoute","ngStorage"]).
+var module = angular.module("Pasoporto",["ngRoute","ngStorage","ja.qr"]).
         config(["$routeProvider",function(a){
         
         a.when('/home', {templateUrl: 'partials/home.html', controller: 'homeCtrl'});
@@ -19,6 +19,11 @@ var module = angular.module("Pasoporto",["ngRoute","ngStorage"]).
         a.when('/reserva', {templateUrl: 'partials/reserva.html', controller: 'reservaCtrl'});
         a.when('/mireserva', {templateUrl: 'partials/mireserva.html', controller: 'miReservaCtrl'});
         a.when('/calificar', {templateUrl: 'partials/calificar.html', controller: 'calificarCtrl'});
+        //nuevo
+        a.when('/mipasoporto', {templateUrl: 'partials/mipasoporto.html', controller: 'miPasoportoCtrl'});
+        a.when('/pasoporto', {templateUrl: 'partials/pasoporto.html', controller: 'pasoportoCtrl'});
+        a.when('/solpassoporto', {templateUrl: 'partials/solpasoporto.html', controller: 'solPasoCtrl'});
+
         a.otherwise({redirectTo:"/home"});
     }]).directive('capitalize', function () {
             return {
