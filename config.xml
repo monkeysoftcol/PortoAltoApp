@@ -58,14 +58,11 @@
         <splash height="480" platform="ios" src="res/screen/ios/Default~iphone.png" width="320" />
     </platform>
     <platform name="ios">
-         <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
-             <string></string>
-         </config-file>
          <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-             <string></string>
+             <string>You must have access to the camera to scan QR codes</string>
          </config-file>
           <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
-             <string></string>
+             <string>You must have access to the camera to scan QR codes</string>
          </config-file>
     </platform>
 
