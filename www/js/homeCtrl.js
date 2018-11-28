@@ -1,12 +1,13 @@
 module.controller('homeCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
     console.log("Home ctrl");
 
-    if ($('#wrapper').is('toggled')) {
-        $('#wrapper').toggleClass('');
+    /*if ($('#wrapper').is('toggled')) {
+        $('#wrapper').toggleClass('toggled');  
     }
     else{
-        $('#wrapper').toggleClass('toggled');
-    }
+        $('#wrapper').removeClass('toggled');
+        
+    }*/
 
 
 
