@@ -9,16 +9,16 @@
         <form>
             <div class="form-group" ng-class="{'obligatorio': errores.selectA}">
                 <label class="label_form control-label">C&oacute;mo nos calificas :</label>
-                <select id="calificacion" name="calificacion" data-native-menu="false" class="form-control">
+                <select id="calificacion" name="calificacion" data-native-menu="false" class="form-control" ng-model="object.calificacion">
                     <option value="" selected="selected">Seleccione....</option>
                     <option value="Positivamente">Positivamente</option>
                     <option value="Negativamente">Negativamente</option>
                 </select>
                 <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.selectA">{{errores.selectA}}</small>
             </div>
-            <div class="form-group" ng-class="{'obligatorio': errores.tdecoracion}">
+            <div class="form-group" ng-class="{'obligatorio': errores.satisfaccion}">
                 <label class="label_form control-label">Cu&aacute;l es tu grado de satisf&aacute;cci&oacute;n :</label>
-                <select id="satisfaccion" name="satisfaccion" data-native-menu="false" class="form-control">
+                <select id="satisfaccion" name="satisfaccion" data-native-menu="false" class="form-control" ng-model="object.satisfaccion">
                     <option value="" selected="selected">Seleccione....</option>
                     <option value="1">Muy insatisfecho</option>
                     <option value="2">Insatisfecho</option>
@@ -26,13 +26,13 @@
                     <option value="4">Satisfecho</option>
                     <option value="5">Muy satisfecho</option>
                 </select>
-                <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.tdecoracion">{{errores.tdecoracion}}</small>
+                <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.satisfaccion">{{errores.satisfaccion}}</small>
             </div>
-            <div class="form-group" ng-class="{'obligatorio': errores.tdecoracion}">
+            <div class="form-group" ng-class="{'obligatorio': errores.observaciones}">
                 <label class="label_form control-label">Observaciones :</label>
                 <textarea class="form-control" id="obsers_calificacion" name="obsers_calificacion" width="100%" height="150px"
-                    maxlength="100"></textarea>
-                <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.tdecoracion">{{errores.tdecoracion}}</small>
+                    maxlength="100" ng-model="object.observaciones"></textarea>
+                <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.observaciones">{{errores.observaciones}}</small>
             </div>
         </form>
     </div>

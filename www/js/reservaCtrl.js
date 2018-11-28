@@ -1,5 +1,5 @@
 module.controller('reservaCtrl', ['$scope', '$http','$localStorage', function ($scope, $http,$localStorage) {
-
+    $("#wrapper").toggleClass("toggled");
     $("html, body").animate({ scrollTop: 0 }, 600);
     baseController($scope,$localStorage);
 

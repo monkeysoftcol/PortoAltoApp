@@ -30,9 +30,12 @@
             </div>
 
             <div>
+                    <a href="#/mipasoporto" data-rel="popup" style="float:right; background: transparent; color:#e8e4c4;font-weight: bold;"><img
+                        src="img/pasoporto.png" height="40px" width="40px" style="background: transparent; align='center';"></a>
                 <a href="#/reserva" data-rel="popup" style="float:right; background: transparent; color:#e8e4c4;font-weight: bold;"><img
                         src="img/hacerreserva.png" height="40px" width="40px" style="background: transparent; align='center';">
-                    Hacer reserva</a>&nbsp;&nbsp;
+                    Hacer reserva&nbsp;&nbsp;&nbsp;&nbsp;</a>
+               
             </div>
             <div ng-controller="userOpsCtrl">
                 <button id="menu-toggleu" ng-click="loadMenusOpt()" class="navbar-toggler" type="button">
@@ -47,7 +50,7 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper" ng-controller="genOpsCtrl">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand" ng-click="menu()" ng-repeat="menu in listaMenuF"><a href="{{menu.url}}">{{menu.texto}}</a></li>
+                <li class="sidebar-brand" click="menu()" ng-repeat="menu in listaMenuF"><a href="{{menu.url}}">{{menu.texto}}</a></li>
                 <li>
                     <div class="logo_menu">
                         <img src="img/oporto.png" height="60px" width="60px" style="background: transparent; align='center';" />

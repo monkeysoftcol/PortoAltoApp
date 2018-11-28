@@ -1,5 +1,6 @@
 
 function baseController($scope,$localStorage) {
+   
     $scope.listaMenu = [];
     $localStorage.cedula = 123456789;
 
@@ -13,8 +14,8 @@ function baseController($scope,$localStorage) {
                 { "url": "#/eventos", "texto": "Eventos" },
                 { "url": "#/promo", "texto": "Promociones" },
                 { "url": "#/pasoporto", "texto": "Pasaporto" },
-                { "url": "#/mipasoporto", "texto": "Mi pasaporto" },
-                { "url": "#/solpassoporto", "texto": "Quiero mi pasaporto" }
+                { "url": "#/mipasoporto", "texto": "Mi pasaporto" }
+                //{ "url": "#/solpassoporto", "texto": "Quiero mi pasaporto" }
             ];
         } else {
             $scope.listaMenu = [
@@ -24,5 +25,9 @@ function baseController($scope,$localStorage) {
             ];
         }
         $localStorage.menu = $scope.listaMenu;
+    }
+    
+    $scope.menu = function() {
+        $("#wrapper").toggleClass("toggled");
     }
 }

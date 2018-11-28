@@ -1,5 +1,7 @@
 module.controller('eventoCtrl', ['$scope', '$http', function ($scope, $http) {
     console.log("eventoCtrl ctrl");
+    $("#wrapper").toggleClass("toggled");
+    
     $scope.url = "http://www.portoalto.com.co/webservice.php?opc=13";
     $scope.eventos;
     $("html, body").animate({ scrollTop: 0 }, 600);
