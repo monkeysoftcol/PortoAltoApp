@@ -2,7 +2,7 @@
 function baseController($scope,$localStorage) {
    
     $scope.listaMenu = [];
-    $localStorage.cedula = 123456789;
+    //$localStorage.cedula = 123456789;
 
     $scope.listarMenu = function (user) {
         if (!user) {
@@ -21,7 +21,7 @@ function baseController($scope,$localStorage) {
             $scope.listaMenu = [
                 { "url": "#/mireserva", "texto": "Mi Ultima Reserva" },
                 { "url": "#/calificar", "texto": "Calificar Servicio" },
-                { "url": "", "texto": "Cerrar Sesión" }
+                { "url": "#/salir", "texto": "Cerrar Sesión" }
             ];
         }
         $localStorage.menu = $scope.listaMenu;
@@ -30,4 +30,5 @@ function baseController($scope,$localStorage) {
     $scope.menu = function() {
         $("#wrapper").toggleClass("toggled");
     }
+
 }

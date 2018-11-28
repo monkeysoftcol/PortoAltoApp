@@ -1,13 +1,13 @@
 module.controller('opcionesCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
 
     console.log("Cargado opciones!!");
-    baseController($scope,$localStorage);
-    $scope.loadMenusOpt = function(){
+    baseController($scope, $localStorage);
+    $scope.loadMenusOpt = function () {
         $scope.listarMenu(false);
         $("#wrapper").toggleClass("toggled");
         $('#btnmenuoculto').scope().cargarOpciones();
     }
-    $scope.menu = function() {
+    $scope.menu = function () {
         $("#wrapper").toggleClass("toggled");
     }
 }]);
@@ -15,28 +15,39 @@ module.controller('opcionesCtrl', ['$scope', '$http', '$localStorage', function 
 module.controller('userOpsCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
 
     console.log("Cargado userOpsCtrl!!");
-    baseController($scope,$localStorage);
+    baseController($scope, $localStorage);
     $scope.listarMenu(true);
-    
-    $scope.loadMenusOpt = function(){
+
+    $scope.loadMenusOpt = function () {
         $scope.listarMenu(true);
         $("#wrapper").toggleClass("toggled");
         $('#btnmenuoculto').scope().cargarOpciones();
     }
 
-    $scope.menu = function() {
+    $scope.menu = function () {
         $("#wrapper").toggleClass("toggled");
+    }
+
+    $scope.cerrarSesion = function () {
+
     }
 }]);
 
 module.controller('genOpsCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
 
     $scope.listaMenuF;
-    baseController($scope,$localStorage);
-    $scope.cargarOpciones = function(){
+    baseController($scope, $localStorage);
+    $scope.cargarOpciones = function () {
         $scope.listaMenuF = $localStorage.menu;
     }
-    $scope.menu = function() {
+    $scope.menu = function () {
         $("#wrapper").toggleClass("toggled");
     }
+}]);
+
+
+module.controller('salirCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
+    $localStorage.cedula = null;
+    $localStorage.tipo = null;
+    window.location.href = './index.html#/home';
 }]);

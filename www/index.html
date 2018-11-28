@@ -23,40 +23,20 @@
 
     <div class="pos-f-t">
         <nav class="navbar navbar-dark bg-dark fixed-top">
-            <div ng-controller="opcionesCtrl">
-                <button id="menu-toggle" ng-click="loadMenusOpt()" class="navbar-toggler" type="button">
-                    <img src="img/menu.png" height="40px" width="40px" style="background: transparent; align='center';"></a></td>
-                </button>
-            </div>
-
+            <div></div>
             <div>
-                    <a href="#/mipasoporto" data-rel="popup" style="float:right; background: transparent; color:#e8e4c4;font-weight: bold;"><img
-                        src="img/pasoporto.png" height="40px" width="40px" style="background: transparent; align='center';"></a>
-                <a href="#/reserva" data-rel="popup" style="float:right; background: transparent; color:#e8e4c4;font-weight: bold;"><img
-                        src="img/hacerreserva.png" height="40px" width="40px" style="background: transparent; align='center';">
-                    Hacer reserva&nbsp;&nbsp;&nbsp;&nbsp;</a>
-               
+                <a data-rel="popup" style="float:right; background: transparent; color:#e8e4c4;font-weight: bold;"><img
+                        src="img/oporto.png" height="40px" width="40px" style="background: transparent; align='center';"></a>
             </div>
-            <div ng-controller="userOpsCtrl">
-                <button id="menu-toggleu" ng-click="loadMenusOpt()" class="navbar-toggler" type="button">
-                    <img src="img/miperfil.png" height="40px" width="40px" style="background: transparent; align='center';"></a>
-                </button>
-            </div>
+            <div></div>
         </nav>
 
     </div>
 
     <div id="wrapper">
         <!-- Sidebar -->
-        <div id="sidebar-wrapper" ng-controller="genOpsCtrl">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand" click="menu()" ng-repeat="menu in listaMenuF"><a href="{{menu.url}}">{{menu.texto}}</a></li>
-                <li>
-                    <div class="logo_menu">
-                        <img src="img/oporto.png" height="60px" width="60px" style="background: transparent; align='center';" />
-                    </div>
-                </li>
-            </ul>
+        <div id="sidebar-wrapper">
+
             <button id="btnmenuoculto" name="btnmenuoculto"></button>
         </div>
 
@@ -93,7 +73,7 @@
 
     <script src="./js/lib/angular.min.js"></script>
     <script src="./js/lib/angular-sanitize.js"></script>
-    
+
     <script src="./js/lib/qrcode.js"></script>
     <script src="./js/lib/angular-qr.js"></script>
 
@@ -101,41 +81,12 @@
     <script src="./js/lib/ngStorage.js" type="text/javascript"></script>
 
     <script src="./js/module.js" type="text/javascript"></script>
-    <script src="./js/app.js" type="text/javascript"></script>
-    <script src="./js/baseCtrl.js" type="text/javascript"></script>
-    <script src="./js/opcionesCtrl.js" type="text/javascript"></script>
-    <script src="./js/homeCtrl.js" type="text/javascript"></script>
-    <script src="./js/menuCtrl.js" type="text/javascript"></script>
-    <script src="./js/menuDepCtrl.js" type="text/javascript"></script>
-    <script src="./js/eventoCtrl.js" type="text/javascript"></script>
-    <script src="./js/promoCtrl.js" type="text/javascript"></script>
-    <script src="./js/aboutCtrl.js" type="text/javascript"></script>
-    <script src="./js/reservaCtrl.js" type="text/javascript"></script>
-    <script src="./js/calificarCtrl.js" type="text/javascript"></script>
-    <script src="./js/miReservaCtrl.js" type="text/javascript"></script>
-    <script src="./js/pasoportoCtrl.js" type="text/javascript"></script>
+    <script src="./js/applogin.js" type="text/javascript"></script>
+    <script src="./js/loginCtrl.js" type="text/javascript"></script>
+
     <script type="text/javascript" src="cordova.js"></script>
 
-    <!-- Menu Toggle Script -->
-    <script>
-        function menu() {
-            $("#wrapper").toggleClass("toggled");
-        }
-        function user_menu() {
-            $("#wrapper").toggleClass("toggled");
-        }
-        /*$("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });*/
 
-        function onload() {
-            document.addEventListener('deviceready', onDeviceReady);
-        }
-        function onDeviceReady() {
-            StatusBar.overlaysWebView(false);
-        }
-    </script>
 </body>
 
 </html>

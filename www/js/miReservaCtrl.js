@@ -1,5 +1,7 @@
 module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
     //$("#wrapper").toggleClass("toggled");
+
+    $("html, body").animate({ scrollTop: 0 }, 600);
     $scope.url = "http://www.portoalto.com.co/webservice.php?opc=5";
     $scope.reserva;
     $("html, body").animate({ scrollTop: 0 }, 600);

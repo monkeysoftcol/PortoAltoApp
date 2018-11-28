@@ -1,5 +1,6 @@
 module.controller('promoCtrl', ['$scope', '$http', function ($scope, $http) {
     //$("#wrapper").toggleClass("toggled");
+    $("html, body").animate({ scrollTop: 0 }, 600);
     $scope.url = "http://www.portoalto.com.co/webservice.php?opc=14";
     $scope.promociones;
     $("html, body").animate({ scrollTop: 0 }, 600);
