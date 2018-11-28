@@ -11,13 +11,16 @@ module.controller('miPasoportoCtrl', ['$scope', '$http', '$localStorage', functi
         $http.post($scope.url,$scope.object).success(function (data) {
             console.log(data);
             if(data.status=='SUCCESS'){
+                alert(JSON.stringify(data.object));
                 $scope.infoQr = "Cliente : "+data.object.nombres+ " " + data.object.apellidos +" | CC"+data.object.nodocumento+" | Email: "+data.object.email;
             } else{
+                console.log("Error en los ws");
                 $('#msgEsperaM').html(data.message);
                 $('#dlgEsperaM').modal();
             }
             $('#dlgEsperaM').modal('hide');
         }).error(function (data, status, headers, config) {
+            console.log("Error en los ws");
             $('#dlgEsperaM').modal('hide');
             $('#msgEsperaM').html("Los servicios web no están disponibes");
             $('#dlgEsperaM').modal();
