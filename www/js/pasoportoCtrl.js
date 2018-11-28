@@ -12,6 +12,7 @@ module.controller('miPasoportoCtrl', ['$scope', '$http', '$localStorage', functi
             console.log(data);
             if(data.status=='SUCCESS'){
                 $scope.string = String("CC"+data.object.nodocumento+"|"+data.object.nombres+ " "+data.object.apellidos+"| Email="+data.object.email);
+                $scope.object.nombres = data.object.nombres+ " "+data.object.apellidos;
             } else{
                 $('#msgEsperaM').html(data.message);
                 $('#dlgEsperaM').modal();
@@ -23,8 +24,7 @@ module.controller('miPasoportoCtrl', ['$scope', '$http', '$localStorage', functi
             $('#dlgEsperaM').modal();
         });
     }
-    //$scope.loadInfo();
-    
+    $scope.loadInfo();
 }]);
 
 
