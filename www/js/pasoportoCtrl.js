@@ -12,7 +12,7 @@ module.controller('miPasoportoCtrl', ['$scope', '$http', '$localStorage', functi
             console.log(data);
             if(data.status=='SUCCESS'){
                 alert(JSON.stringify(data.object));
-                $scope.infoQr = "Cliente : "+data.object.nombres+ " " + data.object.apellidos +" | CC"+data.object.nodocumento+" | Email: "+data.object.email;
+                $scope.infoQr = "CC"+data.object.nodocumento;
             } else{
                 console.log("Error en los ws");
                 $('#msgEsperaM').html(data.message);
