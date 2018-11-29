@@ -9,7 +9,7 @@ module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function
     $scope.reserva;
 
     $scope.loadinfo = function () {
-        $('#msgEsperaM').html("Consultado...");
+        $('#msgEsperaM').html("Consultado..."+cedula);
         $('#dlgEsperaM').modal();
         $http.get($scope.url + "&cedula=" + $localStorage.cedula, {}
         ).success(function (data) {
@@ -32,6 +32,7 @@ module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function
 
 
     $scope.cancelar = function () {
+        $scope.reserva = document.getElementById("reservaId").value;
         console.log("Datos = " + $scope.estado + " >>> " + $scope.reserva);
         if ($scope.reserva) {
             console.log("Cancelando reserva..");
