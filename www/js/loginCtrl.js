@@ -135,4 +135,8 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', function ($s
         });
     }
 
+    $scope.userPortoAlto =function(){
+        
+    }
+
 }]);
