@@ -9,7 +9,7 @@ module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function
     $scope.reserva;
 
     $scope.loadinfo = function () {
-        $('#msgEsperaM').html("Consultado..."+cedula);
+        $('#msgEsperaM').html("Consultado...");
         $('#dlgEsperaM').modal();
         $http.get($scope.url + "&cedula=" + $localStorage.cedula, {}
         ).success(function (data) {

@@ -1,8 +1,11 @@
 
-function baseController($scope,$localStorage) {
-   
+function baseController($scope, $localStorage) {
+
     $scope.listaMenu = [];
-    //$localStorage.cedula = 123456789;
+    if (localStorage.length == 0) {
+        $localStorage.cedula = sessionStorage.cedula;
+        $localStorage.tipo = sessionStorage.tipo;
+    }
 
     $scope.listarMenu = function (user) {
         if (!user) {
@@ -26,8 +29,8 @@ function baseController($scope,$localStorage) {
         }
         $localStorage.menu = $scope.listaMenu;
     }
-    
-    $scope.menu = function() {
+
+    $scope.menu = function () {
         $("#wrapper").toggleClass("toggled");
     }
 

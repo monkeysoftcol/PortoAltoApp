@@ -30,7 +30,9 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', function ($s
         ).success(function (data) {
             if (data == 'Existe') {
                 $('#msgEsperaM').html("Bienvenido!!!!");
-                cedula = $scope.obj.cedula;
+                sessionStorage.cedula =$scope.obj.cedula;
+                sessionStorage.tipo = "cliente";
+                
                 $localStorage.cedula = $scope.obj.cedula;
                 $localStorage.tipo = "cliente";
                 window.location.href = './portoalto.html#/home';

@@ -1,7 +1,5 @@
 (function() {
 	'use strict';
-	// Inicializacion del modulo
-	var cedula;
 
 	angular.module('Pasoporto.controllers', []);
 
