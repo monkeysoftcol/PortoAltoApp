@@ -1,5 +1,5 @@
 module.controller('calificarCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
-    
+    $("#wrapper").toggleClass("toggled");
     $scope.ruta = "http://www.portoalto.com.co";
     $scope.errores ={};
     $scope.object = {};

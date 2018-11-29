@@ -16,20 +16,10 @@
                 <label class="label_form">Hora de reserva:</label>
                 <select id="hora_reserva" name="hora_reserva" class="form-control" data-native-menu="false" data-theme="a" required="required"
                     ng-model="obj.hora" ng-change="loadMesas()">
-                    <option value="">Selec. hora</option>
-                    <option value="00:00:00">12:00 MN</option>
-                    <option value="1:00:00">1:00 AM</option>
-                    <option value="2:00:00">2:00 AM</option>
-                    <option value="3:00:00">3:00 AM</option>
-                    <option value="4:00:00">4:00 AM</option>
-                    <option value="5:00:00">5:00 AM</option>
-                    <option value="6:00:00">6:00 AM</option>
-                    <option value="7:00:00">7:00 AM</option>
-                    <option value="8:00:00">8:00 AM</option>
-                    <option value="9:00:00">9:00 AM</option>
+                    <option value="">Seleccionar...</option>
                     <option value="10:00:00">10:00 AM</option>
                     <option value="11:00:00">11:00 AM</option>
-                    <option value="12:00:00">12:00 MD</option>
+                    <option value="12:00:00">12:00 PM</option>
                     <option value="13:00:00">1:00 PM</option>
                     <option value="14:00:00">2:00 PM</option>
                     <option value="15:00:00">3:00 PM</option>
@@ -41,6 +31,8 @@
                     <option value="21:00:00">9:00 PM</option>
                     <option value="22:00:00">10:00 PM</option>
                     <option value="23:00:00">11:00 PM</option>
+                    <option value="23:59:00">12:00 AM</option>
+                    <option value="1:00:00">1:00 AM</option>
                 </select>
                 <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.hora">{{errores.hora}}</small>
             </div>
@@ -55,7 +47,7 @@
                 <label class="label_form">Número de Personas:</label>
                 <select name="personas" id="personas" required="required" class="form-control" ng-model="obj.nropersonas" data-native-menu="false" data-theme="a">
                     <!--  onchange="ejecutar_ajax()" -->
-                    <option value="" selected="selected">N&uacute;mero de personas....</option>
+                    <option value="" selected="selected">Seleccionar....</option>
                     <option value="1">1 Persona</option>
                     <option value="2">2 Personas</option>
                     <option value="3">3 Personas</option>

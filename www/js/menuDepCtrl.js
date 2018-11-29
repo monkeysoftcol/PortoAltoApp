@@ -1,5 +1,5 @@
 module.controller('menuDepCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
-      //$("#wrapper").toggleClass("toggled");
+      $("#wrapper").toggleClass("toggled");
       console.log("menu cargado!!!!");
       $scope.url = '';
       $scope.showList = true;

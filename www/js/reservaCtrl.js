@@ -1,7 +1,7 @@
-module.controller('reservaCtrl', ['$scope', '$http','$localStorage', function ($scope, $http,$localStorage) {
-   // $("#wrapper").toggleClass("toggled");
+module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
+    
     $("html, body").animate({ scrollTop: 0 }, 600);
-    baseController($scope,$localStorage);
+    baseController($scope, $localStorage);
 
     console.log("reserva....");
     $scope.url = "http://www.portoalto.com.co/webservice.php?opc=3";//decoración
@@ -13,7 +13,10 @@ module.controller('reservaCtrl', ['$scope', '$http','$localStorage', function ($
     $scope.formSend = false;
     $scope.promociones = '';
     $scope.listaMesas;
-    $scope.listDecoracion=[];
+    $scope.listDecoracion = [];
+
+
+
 
     $scope.loadpromociones = function () {
         $('#msgEsperaM').html("Consultado...");
@@ -22,7 +25,10 @@ module.controller('reservaCtrl', ['$scope', '$http','$localStorage', function ($
         ).success(function (data) {
             $scope.promociones = data;
             document.getElementById("div_promos").innerHTML = $scope.promociones;
-            $('#dlgEsperaM').modal('hide');
+            //$('#dlgEsperaM').modal('hide');
+
+            $('#msgEsperaM').html("Tenga en cuenta que el costo de la reserva por cada persona es de $30.000 pesos consumibles");
+            $('#dlgEsperaM').modal();
         }).error(function (data, status, headers, config) {
             $('#dlgEsperaM').modal('hide');
             $('#msgEsperaM').html("Los servicios web no están disponibes");
@@ -109,14 +115,14 @@ module.controller('reservaCtrl', ['$scope', '$http','$localStorage', function ($
 
         $http.get($scope.urlc + "&cedula=" + $scope.obj.cedula + "&mesa=" + $scope.obj.mesa + "&fecha_reserva=" + $scope.obj.fecha + "&hora_reserva=" + $scope.obj.horaReserva + "&decora=" + $scope.obj.decora + "&personas=" + $scope.obj.personas + "&motivo=" + $scope.obj.motivo, {}
         ).success(function (data) {
-            if(data=='Guardada'){
-                $('#msgEsperaM').html("Tu Reserva Ha Sido Apartada - Gracias Por Confiar En Nosotros");    
+            if (data == 'Guardada') {
+                $('#msgEsperaM').html("Tu Reserva Ha Sido Apartada - Gracias Por Confiar En Nosotros");
             } else {
-                $('#msgEsperaM').html(data);    
+                $('#msgEsperaM').html(data);
             }
             $('#dlgEsperaM').modal();
         }).error(function (data, status, headers, config) {
-           
+
             $('#msgEsperaM').html("Los servicios web no están disponibes");
             $('#dlgEsperaM').modal();
         });

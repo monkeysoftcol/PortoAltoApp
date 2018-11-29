@@ -119,6 +119,8 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', function ($s
                     console.log("Dumiendo...");
                   }, 2000);
                 window.location.href = './portoalto.html#/home';
+                $window.localStorage.setItem("cedula",$scope.obj.ndoc); 
+                $window.localStorage.setItem("tipo","cliente"); 
             } else {
                 $('#msgEsperaM').html(data);
             }
