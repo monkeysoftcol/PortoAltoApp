@@ -25,7 +25,7 @@ function baseController($scope, $localStorage) {
             $scope.listaMenu = [
                 { "url": "#/mireserva", "texto": "Mi Ultima Reserva" },
                 { "url": "#/calificar", "texto": "Calificar Servicio" },
-                { "url": "#/salir", "texto": "Cerrar Sesi&oacute;n" }
+                { "url": "#/salir", "texto": "Salir" }
             ];
         }
         $localStorage.menu = $scope.listaMenu;
