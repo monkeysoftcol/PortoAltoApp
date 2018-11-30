@@ -117,6 +117,8 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
         ).success(function (data) {
             if (data == 'Guardada') {
                 $('#msgEsperaM').html("Tu Reserva Ha Sido Apartada - Gracias Por Confiar En Nosotros");
+                $scope.errores = {};
+                $scope.obj = {};
             } else {
                 $('#msgEsperaM').html(data);
             }
@@ -130,6 +132,8 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
     };
 
     $scope.cancelar = function () {
+        $scope.errores = {};
+        $scope.obj = {};
         window.location.href = './index.html#/home';
     };
 
