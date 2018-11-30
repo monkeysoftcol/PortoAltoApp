@@ -7,7 +7,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', function ($s
     $scope.urlc = "http://www.portoalto.com.co";
     $scope.isLogin = true;
     //poner en falsse
-    $scope.isPorto = true;
+    $scope.isPorto = false;
 
     $scope.login = function () {
         var error = false;
