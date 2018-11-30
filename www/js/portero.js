@@ -127,12 +127,12 @@ module.controller('porterohomeCtrl', ['$scope', '$http', '$localStorage', functi
     }
 
     $scope.escanearQR = function () {
-        console.log("escanenado....");
+        /*console.log("escanenado....");
         cordova.plugins.barcodeScanner.scan(function (result) {
             alert(JSON.stringify(result));
         }, function (error) {
             alert(JSON.stringify(error));
-        });
+        });*/
 
         cordova.plugins.barcodeScanner.scan(
             function (result) {
