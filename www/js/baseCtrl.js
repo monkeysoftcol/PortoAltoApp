@@ -7,6 +7,7 @@ function baseController($scope, $localStorage) {
         $localStorage.tipo = sessionStorage.tipo;
     }
 
+    
     $scope.listarMenu = function (user) {
         if (!user) {
             $scope.listaMenu = [

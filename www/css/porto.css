@@ -83,3 +83,9 @@ body {
 .texto_div{
     color:#e8e4c4 !important;
 }
+
+.filter {
+    -webkit-backdrop-filter: grayscale() blur(10px); /* Safari 9+ */
+    backdrop-filter: grayscale() blur(10px); /* Chrome and Opera */
+    background-color: rgba(255, 255, 255, 0.3);
+}

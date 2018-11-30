@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h3 class="titulo">Consultar Reserva</h3>
+        <hr>
+    </div>
+</div>
+<div class="row" ng-show="!showDetail">
+    <div class="col-lg-12 texto_div">
+        <form>
+            <div class="form-group" ng-class="{'has-error': errores.cedula}">
+                <label for="exampleInputEmail1">N° de cédula</label>
+                <input type="number" class="form-control" aria-describedby="emailHelp" ng-model="obj.cedula">
+                <small class="form-text text-muted obligatorio" ng-show="errores.cedula">{{errores.cedula}}</small>
+            </div>
+        </form>
+        <div class="col-lg-12" style="font-size: 100%">
+            <hr>
+            <a type="button" ng-click="buscar()" class="btnportologin">Consultar</a>
+            <a type="button" ng-click="cancelar()" class="btnportologin">Atr&aacute;s</a>
+        </div>
+    </div>
+</div>
+<div class="row" ng-show="showDetail">
+    <div class="col-lg-12 texto_div">
+        <div id="result_escaneo"></div>
+    </div>
+    <div class="col-lg-12" style="font-size: 100%">
+        <hr>
+        <a type="button" ng-click="confirmar()" class="btnportologin" ng-show="estado=='Abierta'">Confirmar</a>
+        <a type="button" ng-click="cancelar()" class="btnportologin">Atr&aacute;s</a>
+    </div>
+
+</div>

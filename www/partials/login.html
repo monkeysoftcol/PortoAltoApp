@@ -1,95 +1,114 @@
-<div class="row" ng-show="!isLogin">
-    <div class="col-lg-12 text-center">
-        <h4 class="titulo">Crear Cuenta</h4>
-        <small class="form-text text-muted">Registrese y obtenga muchos beficios como cliente VIP</small>
-        <hr>
+<div ng-show="!isPorto">
+    <div class="row" ng-show="!isLogin">
+        <div class="col-lg-12 text-center">
+            <h4 class="titulo">Crear Cuenta</h4>
+            <small class="form-text text-muted">Registrese y obtenga muchos beficios como cliente VIP</small>
+            <hr>
+        </div>
     </div>
-</div>
-<div class="row" ng-show="isLogin">
+    <div class="row" ng-show="isLogin">
         <div class="col-lg-12 text-center">
             <h4 class="titulo">Bienvenido</h4>
             <hr>
         </div>
     </div>
-<div class="row">
-    <div class="col-lg-12 texto_div" ng-show="!isLogin">
-        <form>
-            <div class="form-group" ng-class="{'has-error': errores.email}">
-                <input type="email" class="form-control"  ng-model="obj.email"
-                aria-describedby="emailHelp" ng-model="obj.cedula" placeholder="Email">
-                <small class="form-text text-muted obligatorio" ng-show="errores.email">{{errores.email}}</small>
+    <div class="row">
+        <div class="col-lg-12 texto_div" ng-show="!isLogin">
+            <form>
+                <div class="form-group" ng-class="{'has-error': errores.email}">
+                    <input type="email" class="form-control" ng-model="obj.email" aria-describedby="emailHelp" ng-model="obj.cedula"
+                        placeholder="Email">
+                    <small class="form-text text-muted obligatorio" ng-show="errores.email">{{errores.email}}</small>
+                </div>
+                <div class="form-group" ng-class="{'has-error': errores.nombres}">
+                    <input type="text" class="form-control" ng-model="obj.nombres" placeholder="Nombres">
+                    <small class="form-text text-muted obligatorio" ng-show="errores.nombres">{{errores.nombres}}</small>
+                </div>
+                <div class="form-group" ng-class="{'has-error': errores.apellidos}">
+                    <input type="text" class="form-control" ng-model="obj.apellidos" placeholder="Apellidos">
+                    <small class="form-text text-muted obligatorio" ng-show="errores.apellidos">{{errores.apellidos}}</small>
+                </div>
+                <div class="form-group" ng-class="{'has-error': errores.ndoc}">
+                    <input type="number" class="form-control" ng-model="obj.ndoc" placeholder="N° Documento">
+                    <small class="form-text text-muted obligatorio" ng-show="errores.ndoc">{{errores.ndoc}}</small>
+                </div>
+                <div class="form-group" ng-class="{'has-error': errores.celular}">
+                    <input type="number" class="form-control" ng-model="obj.celular" placeholder="N° Celular">
+                    <small class="form-text text-muted obligatorio" ng-show="errores.celular">{{errores.celular}}</small>
+                </div>
+                <div class="form-group" ng-class="{'obligatorio': errores.genero}">
+                    <select id="calificacion" name="calificacion" data-native-menu="false" class="form-control"
+                        ng-model="obj.genero" aria-placeholder="Genero">
+                        <option value="" selected="selected">Seleccione....</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.genero">{{errores.genero}}</small>
+                </div>
+            </form>
+            <div class="col-lg-12" style="font-size: 100%">
+                <hr>
+                <a type="button" ng-click="registrar()" class="btnportologin">Registrarme</a>
+                <a type="button" ng-click="cancelar()" class="btnportologin">Volver</a>
             </div>
-            <div class="form-group" ng-class="{'has-error': errores.nombres}">
-                <input type="text" class="form-control"  ng-model="obj.nombres" placeholder="Nombres">
-                <small class="form-text text-muted obligatorio" ng-show="errores.nombres">{{errores.nombres}}</small>
-            </div>
-            <div class="form-group" ng-class="{'has-error': errores.apellidos}">
-                <input type="text" class="form-control"  ng-model="obj.apellidos" placeholder="Apellidos">
-                <small class="form-text text-muted obligatorio" ng-show="errores.apellidos">{{errores.apellidos}}</small>
-            </div>
-            <div class="form-group" ng-class="{'has-error': errores.ndoc}">
-                <input type="number" class="form-control"  ng-model="obj.ndoc" placeholder="N° Documento">
-                <small class="form-text text-muted obligatorio" ng-show="errores.ndoc">{{errores.ndoc}}</small>
-            </div>
-            <div class="form-group" ng-class="{'has-error': errores.celular}">
-                <input type="number" class="form-control"  ng-model="obj.celular" placeholder="N° Celular">
-                <small class="form-text text-muted obligatorio" ng-show="errores.celular">{{errores.celular}}</small>
-            </div>
-            <div class="form-group" ng-class="{'obligatorio': errores.genero}">
-                <select id="calificacion" name="calificacion" data-native-menu="false" class="form-control" ng-model="obj.genero" aria-placeholder="Genero">
-                    <option value="" selected="selected">Seleccione....</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                    <option value="Otro">Otro</option>
-                </select>
-                <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.genero">{{errores.genero}}</small>
-            </div>
-        </form>
-        <div class="col-lg-12" style="font-size: 100%">
-            <hr>
-            <a type="button" ng-click="registrar()" class="btnportologin">Registrarme</a>
-            <a type="button" ng-click="cancelar()" class="btnportologin">Volver</a>
         </div>
-    </div>
 
 
-    <div class="col-lg-12 texto_div" ng-show="isLogin">
-        <form>
-            <div class="form-group" ng-class="{'has-error': errores.cedula}">
-                <label for="exampleInputEmail1">N° de cédula</label>
-                <input type="number" class="form-control"  aria-describedby="emailHelp" ng-model="obj.cedula">
-                <small class="form-text text-muted obligatorio" ng-show="errores.cedula">{{errores.cedula}}</small>
+        <div class="col-lg-12 texto_div" ng-show="isLogin">
+            <form>
+                <div class="form-group" ng-class="{'has-error': errores.cedula}">
+                    <label for="exampleInputEmail1">N° de cédula</label>
+                    <input type="number" class="form-control" aria-describedby="emailHelp" ng-model="obj.cedula">
+                    <small class="form-text text-muted obligatorio" ng-show="errores.cedula">{{errores.cedula}}</small>
+                </div>
+                <div class="form-group" ng-class="{'has-error': errores.apellido}">
+                    <label for="exampleInputPassword1">Primer apellido</label>
+                    <input type="text" class="form-control" ng-model="obj.apellido">
+                    <small class="form-text text-muted obligatorio" ng-show="errores.apellido">{{errores.apellido}}</small>
+                </div>
+            </form>
+            <div class="col-lg-12" style="font-size: 100%">
+                <hr>
+                <a type="button" ng-click="login()" class="btnportologin">Continuar</a>
+                <a type="button" ng-click="crearCuenta()" class="btnportologin">Crear cuenta</a>
             </div>
-            <div class="form-group" ng-class="{'has-error': errores.apellido}">
-                <label for="exampleInputPassword1">Primer apellido</label>
-                <input type="text" class="form-control"  ng-model="obj.apellido">
-                <small class="form-text text-muted obligatorio" ng-show="errores.apellido">{{errores.apellido}}</small>
-            </div>
-        </form>
-        <div class="col-lg-12" style="font-size: 100%">
-            <hr>
-            <a type="button" ng-click="login()" class="btnportologin">Continuar</a>
-            <a type="button" ng-click="crearCuenta()" class="btnportologin">Crear cuenta</a>
-        </div>
-        <div class="col-lg-12 text-center" style="font-size: 100%">
+            <div class="col-lg-12 text-center" style="font-size: 100%">
                 <a ng-click="userPortoAlto()"><strong>Usuario Porto Alto??</strong> </a>
+            </div>
         </div>
-        <!--<ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                    aria-selected="true">Clientes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                    aria-selected="false">Administrador</a>
-            </li>
-            
-        </ul>
-        <div class="tab-content" id="myTabContent" style="background-color: aliceblue">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">H3333</div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">.4444..</div>
-         
-        </div>-->
-    </div>
 
+    </div>
+</div>
+
+<!--=================== login admin porto alto ==========================-->
+<div ng-show="isPorto">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h4 class="titulo">Bienvenido</h4>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 texto_div">
+            <form>
+                <div class="form-group" ng-class="{'has-error': errores.usuario}">
+                    <label for="exampleInputEmail1">Usuario :</label>
+                    <input type="text" class="form-control" ng-model="obj.usuario">
+                    <small class="form-text text-muted obligatorio" ng-show="errores.usuario">{{errores.usuario}}</small>
+                </div>
+                <div class="form-group" ng-class="{'has-error': errores.password}">
+                    <label for="exampleInputPassword1">Contraseña :</label>
+                    <input type="text" class="form-control" ng-model="obj.password">
+                    <small class="form-text text-muted obligatorio" ng-show="errores.password">{{errores.password}}</small>
+                </div>
+            </form>
+            <div class="col-lg-12" style="font-size: 100%">
+                <hr>
+                <a type="button" ng-click="loginAdmin()" class="btnportologin">Continuar</a>
+                <a type="button" ng-click="cancelAdmin()" class="btnportologin">Volver</a>
+            </div>
+        </div>
+
+    </div>
 </div>
