@@ -18,7 +18,14 @@
     },
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "co.com.portoalto"
+    },
+    "cordova-plugin-barcodescanner": {
+      "PACKAGE_NAME": "co.com.portoalto"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "co.com.portoalto"
+    }
+  }
 }
