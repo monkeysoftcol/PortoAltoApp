@@ -133,5 +133,17 @@ module.controller('porterohomeCtrl', ['$scope', '$http', '$localStorage', functi
         }, function (error) {
             alert(JSON.stringify(error));
         });
+
+        cordova.plugins.barcodeScanner.scan(
+            function (result) {
+                alert("We got a barcode\n" +
+                      "Result: " + result.text + "\n" +
+                      "Format: " + result.format + "\n" +
+                      "Cancelled: " + result.cancelled);
+            }, 
+            function (error) {
+                alert("Scanning failed: " + error);
+            }
+         );
     }
 }]);
