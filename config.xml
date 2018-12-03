@@ -27,11 +27,6 @@
         <splash qualifier="port-xhdpi" src="res/screen/android/drawable-port-xhdpi-screen.png" />
         <splash qualifier="port-xxhdpi" src="res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash qualifier="port-xxxhdpi" src="res/screen/android/drawable-port-xxxhdpi-screen.png" />
-        <config-file parent="/manifest" target="AndroidManifest.xml">
-            <uses-permission android:name="android.permission.CAMERA" />
-            <uses-permission android:name="android.permission.INTERNET" />
-            <uses-feature android:name="android.hardware.camera" android:required="true" />
-        </config-file>
     </platform>
     <platform name="ios">
         <config-file parent="UISupportedExternalAccessoryProtocols" target="*-Info.plist">
