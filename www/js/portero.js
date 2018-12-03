@@ -92,12 +92,30 @@ module.controller('porteroQrCtrl', ['$scope', '$http', '$localStorage', function
     $scope.estado;
     $scope.idreserva;
 
+    $scope.cargarInfo = function () {
+        $scope.cedula =  $localStorage.cliente;
+        if(!$scope.cedula){
+            $scope.cedula =sessionStorage.cliente;
+        }
+    
+        $http.get($scope.urlc + "/webservice.php?opc=8&ruta=http://www.portoalto.com.co&cedula=" + $scope.cedula, {}
+        ).success(function (data) {
+            document.getElementById("result_escaneo").innerHTML = data;
+            $scope.estado = document.getElementById("txtestadoReserva").value;
+            $scope.idreserva = document.getElementById("txtidReserva").value;
+        }).error(function (data) {
+            $('#msgEsperaM').html("Los servicios web no están disponibes");
+            $('#dlgEsperaM').modal();
+        });
+    }
+    $scope.cargarInfo();
+
     $scope.escanearQR = function () {
 
         cordova.plugins.barcodeScanner.scan(function (result) {
 
             $scope.cedula = result.text;
-            alert("Cedula "+result.text);
+            alert("Cedula " + result.text);
             $http.get($scope.urlc + "/webservice.php?opc=8&ruta=http://www.portoalto.com.co&cedula=" + $scope.cedula, {}
             ).success(function (data) {
                 document.getElementById("result_escaneo").innerHTML = data;
@@ -154,7 +172,7 @@ module.controller('porteroQrCtrl', ['$scope', '$http', '$localStorage', function
     }
 }]);
 
-module.controller('porterohomeCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
+module.controller('porterohomeCtrl', ['$scope', '$http', '$localStorage', '$cordovaBarcodeScanner', function ($scope, $http, $localStorage, $cordovaBarcodeScanner) {
     $("html, body").animate({ scrollTop: 0 }, 600);
     baseController($scope, $localStorage);
     console.log(">>> porterohomeCtrl");
@@ -175,24 +193,26 @@ module.controller('porterohomeCtrl', ['$scope', '$http', '$localStorage', functi
         window.location.href = './index.html#/home';
     }
 
-    $scope.escanearQR = function () {
-        /*console.log("escanenado....");
-        cordova.plugins.barcodeScanner.scan(function (result) {
-            alert(JSON.stringify(result));
-        }, function (error) {
-            alert(JSON.stringify(error));
-        });*/
+    $scope.scanRQ = function () {
+        console.log(">>>>>>>>>>>> cepeda qr");
+        try {
+            $cordovaBarcodeScanner
+                .scan()
+                .then(function (result) {
+                    alert(JSON.stringify(result));
+                    $localStorage.cliente = result.text;
+                    sessionStorage.cliente = result.text;
+                    window.location.href = './portero.html#/qr';
+                }, function (err) {
+                    $('#msgEsperaM').html("No se puedo leer el código QR");
+                    $('#dlgEsperaM').modal();
+                });
+        }
+        catch (err) {
+            $('#msgEsperaM').html("No se puedo leer el código QR");
+            $('#dlgEsperaM').modal();
+        }
+    };
 
-        cordova.plugins.barcodeScanner.scan(
-            function (result) {
-                alert("We got a barcode\n" +
-                    "Result: " + result.text + "\n" +
-                    "Format: " + result.format + "\n" +
-                    "Cancelled: " + result.cancelled);
-            },
-            function (error) {
-                alert("Scanning failed: " + error);
-            }
-        );
-    }
+
 }]);
