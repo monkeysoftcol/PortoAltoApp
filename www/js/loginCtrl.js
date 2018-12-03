@@ -1,4 +1,4 @@
-module.controller('loginCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
+module.controller('loginCtrl', ['$scope', '$http', '$localStorage','$cordovaBarcodeScanner', function ($scope, $http, $localStorage,$cordovaBarcodeScanner) {
 
     console.log("Bienvenido a login");
 
@@ -192,7 +192,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', function ($s
     }
 
 
-    $scope.scan = function() {
+    /*$scope.scan = function() {
         alert("Escanenado...");
         cordova.plugins.barcodeScanner.scan(
             function (result) {
@@ -219,5 +219,16 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', function ($s
                 alert("Scanning failed: " + error);
             }
         );
-    }
+    }*/
+    $scope.scan = function () {
+        $cordovaBarcodeScanner
+          .scan()
+          .then(function (result) {
+            $scope.scanResult = result;
+            alert(result);
+          }, function (err) {
+            $scope.scanResult = 'SCAN ERROR (see console)';
+            console.error(err);
+          });
+      };
 }]);

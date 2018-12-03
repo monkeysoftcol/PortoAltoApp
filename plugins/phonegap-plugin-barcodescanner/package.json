@@ -1,27 +1,24 @@
 {
-  "_from": "phonegap-plugin-barcodescanner@^8.0.1",
+  "_from": "git+https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
   "_id": "phonegap-plugin-barcodescanner@8.0.1",
   "_inBundle": false,
-  "_integrity": "sha512-s+wY33+FPgfl/Yc81mIKoPuBX9yhRow0ARGpFZkmiwNplNs8eEwS+XnAzUlYCn77yvyiSymRmSMjjQdbvyHDuQ==",
+  "_integrity": "",
   "_location": "/phonegap-plugin-barcodescanner",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "phonegap-plugin-barcodescanner@^8.0.1",
-    "name": "phonegap-plugin-barcodescanner",
-    "escapedName": "phonegap-plugin-barcodescanner",
-    "rawSpec": "^8.0.1",
-    "saveSpec": null,
-    "fetchSpec": "^8.0.1"
+    "type": "git",
+    "raw": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
+    "rawSpec": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
+    "saveSpec": "git+https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
+    "fetchSpec": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
+    "gitCommittish": null
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/phonegap-plugin-barcodescanner/-/phonegap-plugin-barcodescanner-8.0.1.tgz",
-  "_shasum": "829348e7e2e4353b39ea1ef15fed08b4617f683a",
-  "_spec": "phonegap-plugin-barcodescanner@^8.0.1",
+  "_resolved": "git+https://github.com/phonegap/phonegap-plugin-barcodescanner.git#c5dbca2770d7c0f22ccb23473cd38c5fad8f8fa9",
+  "_spec": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
   "_where": "D:\\EMPRESA\\PROYECTOS\\PortoAltoApp\\AppRepo",
   "author": {
     "name": "Adobe PhoneGap Team"
