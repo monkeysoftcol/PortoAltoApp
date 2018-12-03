@@ -1,4 +1,4 @@
-module.controller('loginCtrl', ['$scope', '$http', '$localStorage','$cordovaBarcodeScanner', function ($scope, $http, $localStorage,$cordovaBarcodeScanner) {
+module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBarcodeScanner', '$cordovaCamera', function ($scope, $http, $localStorage, $cordovaBarcodeScanner, $cordovaCamera) {
 
     console.log("Bienvenido a login");
 
@@ -221,14 +221,45 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage','$cordovaBarc
         );
     }*/
     $scope.scan = function () {
-        $cordovaBarcodeScanner
-          .scan()
-          .then(function (result) {
-            $scope.scanResult = result;
-            alert(result);
-          }, function (err) {
-            $scope.scanResult = 'SCAN ERROR (see console)';
-            console.error(err);
-          });
-      };
+
+        try {
+            $cordovaBarcodeScanner
+                .scan()
+                .then(function (result) {
+                    $scope.scanResult = result;
+                    alert(result);
+                }, function (err) {
+                    $scope.scanResult = 'SCAN ERROR (see console)';
+                    console.error(err);
+                    alert(err);
+                });
+        }
+        catch (err) {
+            alert("Error app " + err);
+        }
+
+
+
+    };
+
+    $scope.sacarFoto = function () {
+
+        try {
+            var options = {
+                destinationType: Camera.DestinationType.FILE_URI,
+                sourceType: Camera.PictureSourceType.CAMERA,
+            };
+
+            $cordovaCamera.getPicture(options).then(function (imageURI) {
+                alert("tengo la imagen");
+            }, function (err) {
+                alert(err);
+            });
+        }
+        catch (err) {
+            alert("Error app " + err);
+        }
+
+
+    }
 }]);
