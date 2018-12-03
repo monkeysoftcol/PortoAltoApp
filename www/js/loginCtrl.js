@@ -225,13 +225,11 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
 
     }
     $scope.scanRQ = function () {
-
         try {
             $cordovaBarcodeScanner
                 .scan()
                 .then(function (result) {
-                    $scope.scanResult = result;
-                    alert(result);
+                    alert(JSON.stringify(result));
                 }, function (err) {
                     $scope.scanResult = 'SCAN ERROR (see console)';
                     console.error(err);

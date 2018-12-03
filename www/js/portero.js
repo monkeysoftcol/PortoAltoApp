@@ -94,9 +94,10 @@ module.controller('porteroQrCtrl', ['$scope', '$http', '$localStorage', function
 
     $scope.escanearQR = function () {
 
-        console.log("escanenado....");
         cordova.plugins.barcodeScanner.scan(function (result) {
+
             $scope.cedula = result.text;
+            alert("Cedula "+result.text);
             $http.get($scope.urlc + "/webservice.php?opc=8&ruta=http://www.portoalto.com.co&cedula=" + $scope.cedula, {}
             ).success(function (data) {
                 document.getElementById("result_escaneo").innerHTML = data;
