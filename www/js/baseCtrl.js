@@ -12,7 +12,7 @@ function baseController($scope, $localStorage) {
         if (!user) {
             $scope.listaMenu = [
                 { "url": "#/home", "texto": "Inicio" },
-                { "url": "#/about", "texto": "Acerca de" },
+                { "url": "#/about", "texto": "Acerca de porto alto" },
                 { "url": "#/menu", "texto": "Nuestra Carta" },
                 { "url": "#/menud", "texto": "Nuestra Carta Futbolera" },
                 { "url": "#/eventos", "texto": "Eventos" },

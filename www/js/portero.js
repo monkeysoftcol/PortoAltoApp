@@ -199,10 +199,11 @@ module.controller('porterohomeCtrl', ['$scope', '$http', '$localStorage', '$cord
             $cordovaBarcodeScanner
                 .scan()
                 .then(function (result) {
-                    alert(JSON.stringify(result));
-                    $localStorage.cliente = result.text;
-                    sessionStorage.cliente = result.text;
-                    window.location.href = './portero.html#/qr';
+                    if(!result.cancelled){
+                        $localStorage.cliente = result.text;
+                        sessionStorage.cliente = result.text;
+                        window.location.href = './portero.html#/qr';
+                    }
                 }, function (err) {
                     $('#msgEsperaM').html("No se puedo leer el código QR");
                     $('#dlgEsperaM').modal();
