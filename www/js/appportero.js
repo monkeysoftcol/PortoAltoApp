@@ -1,6 +1,6 @@
 'use strict';
 
-var module = angular.module("Pasoporto",["ngRoute","ngStorage","ja.qr"]).
+var module = angular.module("Pasoporto",["ngRoute","ngStorage","ja.qr","ngCordova"]).
         config(["$routeProvider",function(a){
         
         a.when('/reserva', {templateUrl: 'partials/portero/reserva.html', controller: 'porteroReservaCtrl'});
