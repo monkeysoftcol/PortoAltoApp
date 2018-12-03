@@ -224,7 +224,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
         }
 
     }
-    /*$scope.scan = function () {
+    $scope.scanRQ = function () {
 
         try {
             $cordovaBarcodeScanner
@@ -244,7 +244,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
 
 
 
-    };*/
+    };
 
     $scope.sacarFoto = function () {
 
