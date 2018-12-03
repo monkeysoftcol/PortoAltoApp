@@ -8,6 +8,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
     $scope.isLogin = true;
     //poner en falsse
     $scope.isPorto = false;
+    
 
     $scope.login = function () {
         var error = false;
@@ -126,6 +127,9 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
                 window.location.href = './portoalto.html#/home';
                 $window.localStorage.setItem("cedula", $scope.obj.ndoc);
                 $window.localStorage.setItem("tipo", "cliente");
+
+                sessionStorage.cedula = $scope.obj.ndoc;
+                sessionStorage.tipo = "cliente";
             } else {
                 $('#msgEsperaM').html(data);
             }
