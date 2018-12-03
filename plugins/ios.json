@@ -24,9 +24,6 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "co.com.portoalto"
-    },
-    "phonegap-plugin-barcodescanner": {
-      "PACKAGE_NAME": "co.com.portoalto"
     }
   },
   "dependent_plugins": {
