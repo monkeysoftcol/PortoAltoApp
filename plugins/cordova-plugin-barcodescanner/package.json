@@ -1,19 +1,19 @@
 {
-  "_from": "cordova-plugin-barcodescanner",
+  "_from": "cordova-plugin-barcodescanner@^0.7.4",
   "_id": "cordova-plugin-barcodescanner@0.7.4",
   "_inBundle": false,
   "_integrity": "sha1-Dhr7wnrIWp+lDmWbTmGSN38kPAM=",
   "_location": "/cordova-plugin-barcodescanner",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "range",
     "registry": true,
-    "raw": "cordova-plugin-barcodescanner",
+    "raw": "cordova-plugin-barcodescanner@^0.7.4",
     "name": "cordova-plugin-barcodescanner",
     "escapedName": "cordova-plugin-barcodescanner",
-    "rawSpec": "",
+    "rawSpec": "^0.7.4",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "^0.7.4"
   },
   "_requiredBy": [
     "#USER",
@@ -21,7 +21,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-barcodescanner/-/cordova-plugin-barcodescanner-0.7.4.tgz",
   "_shasum": "0e1afbc27ac85a9fa50e659b4e6192377f243c03",
-  "_spec": "cordova-plugin-barcodescanner",
+  "_spec": "cordova-plugin-barcodescanner@^0.7.4",
   "_where": "D:\\EMPRESA\\PROYECTOS\\PortoAltoApp\\AppRepo",
   "author": {
     "name": "Martin Reinhardt"

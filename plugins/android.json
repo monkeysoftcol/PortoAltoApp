@@ -7,19 +7,25 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+    "cordova-plugin-barcodescanner": {
+      "PACKAGE_NAME": "co.com.portoalto"
     },
     "cordova-plugin-camera": {
+      "PACKAGE_NAME": "co.com.portoalto"
+    },
+    "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "co.com.portoalto"
     },
     "cordova-plugin-hidden-statusbar": {
       "PACKAGE_NAME": "co.com.portoalto"
     },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "co.com.portoalto"
+    },
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "co.com.portoalto"
     },
-    "cordova-plugin-barcodescanner": {
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "co.com.portoalto"
     }
   },

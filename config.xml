@@ -27,25 +27,23 @@
         <splash qualifier="port-xhdpi" src="res/screen/android/drawable-port-xhdpi-screen.png" />
         <splash qualifier="port-xxhdpi" src="res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash qualifier="port-xxxhdpi" src="res/screen/android/drawable-port-xxxhdpi-screen.png" />
-
-        <config-file target="AndroidManifest.xml" parent="/manifest">
-			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-			<uses-permission android:name="android.permission.CAMERA" />
-			<uses-permission android:name="android.permission.INTERNET" />
-			
-			<uses-feature android:name="android.hardware.camera" android:required="true" />
-			<uses-feature android:name="android.hardware.usb.host" />
-		</config-file>
+        <config-file parent="/manifest" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-feature android:name="android.hardware.camera" android:required="true" />
+            <uses-feature android:name="android.hardware.usb.host" />
+        </config-file>
     </platform>
     <platform name="ios">
-
         <config-file parent="UISupportedExternalAccessoryProtocols" target="*-Info.plist">
-            <array><string>co.com.portoalto</string></array>
+            <array>
+                <string>co.com.portoalto</string>
+            </array>
         </config-file>
-        <!-- Camera Usage Description for iOS 10+ -->
-    	<config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-        	<string>Required for Scanning</string>
-    	</config-file>
+        <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+            <string>Required for Scanning</string>
+        </config-file>
         <icon height="57" platform="ios" src="res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="res/icon/ios/icon@2x.png" width="114" />
         <icon height="40" platform="ios" src="res/icon/ios/icon-40.png" width="40" />
@@ -74,14 +72,6 @@
         <splash height="960" platform="ios" src="res/screen/ios/Default@2x~iphone.png" width="640" />
         <splash height="480" platform="ios" src="res/screen/ios/Default~iphone.png" width="320" />
     </platform>
-    <platform name="ios">
-        <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
-            <string>You must have access to the camera to scan QR codes</string>
-        </config-file>
-        <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
-            <string>You must have access to the camera to scan QR codes</string>
-        </config-file>
-    </platform>
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="StatusBarStyle" value="lightcontent" />
@@ -102,8 +92,8 @@
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
     <engine name="browser" spec="^5.0.4" />
-    <engine name="android" spec="^7.0.0" />
-    <engine name="ios" spec="^4.5.5" />
-    <!--<plugin name="phonegap-plugin-barcodescanner" spec="~8.0.1" />-->
-    <plugin name="cordova-plugin-barcodescanner" spec="^0.7.4" />
+    <plugin name="phonegap-plugin-barcodescanner" spec="^8.0.1" />
+    <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <engine name="ios" spec="~4.5.5" />
 </widget>

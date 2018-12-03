@@ -21,6 +21,15 @@
     },
     "cordova-plugin-barcodescanner": {
       "PACKAGE_NAME": "co.com.portoalto"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "co.com.portoalto"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "co.com.portoalto"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "co.com.portoalto"
     }
   },
   "dependent_plugins": {

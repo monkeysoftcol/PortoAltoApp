@@ -148,7 +148,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', function ($s
     }
 
 
-    $scope.loginAdmin = function(){
+    $scope.loginAdmin = function () {
         var error = false;
         $scope.urlc = "http://www.portoalto.com.co";
 
@@ -170,7 +170,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', function ($s
         }
 
         $http.get($scope.urlc + "/webservice.php?opc=7&usuario=" + $scope.obj.usuario + "&pass=" + $scope.obj.password, {}).success(function (data) {
-            if(data=='0'){
+            if (data == '0') {
                 $('#msgEsperaM').html("Bienvenido!!");
                 setTimeout(function () {
                     console.log("Dumiendo...");
@@ -189,5 +189,35 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', function ($s
             $('#msgEsperaM').html("Los servicios web no están disponibes");
             $('#dlgEsperaM').modal();
         });
+    }
+
+
+    $scope.scan = function() {
+        alert("Escanenado...");
+        cordova.plugins.barcodeScanner.scan(
+            function (result) {
+                alert(result.text);
+                if (!result.cancelled) {
+                    if (result.format == "QR_CODE") {
+                        navigator.notification.prompt("Please enter name of data", function (input) {
+                            var name = input.input1;
+                            var value = result.text;
+
+                            var data = localStorage.getItem("LocalData");
+                            console.log(data);
+                            data = JSON.parse(data);
+                            data[data.length] = [name, value];
+
+                            localStorage.setItem("LocalData", JSON.stringify(data));
+
+                            alert("Done");
+                        });
+                    }
+                }
+            },
+            function (error) {
+                alert("Scanning failed: " + error);
+            }
+        );
     }
 }]);
