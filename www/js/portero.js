@@ -88,13 +88,29 @@ module.controller('porteroQrCtrl', ['$scope', '$http', '$localStorage', function
     $scope.obj = {};
     $scope.errores = {};
     $scope.urlc = "http://www.portoalto.com.co";
+    $scope.cedula;
+    $scope.estado;
+    $scope.idreserva;
 
     $scope.escanearQR = function () {
+
         console.log("escanenado....");
         cordova.plugins.barcodeScanner.scan(function (result) {
-            alert(JSON.stringify(result));
+            $scope.cedula = result.text;
+            $http.get($scope.urlc + "/webservice.php?opc=8&ruta=http://www.portoalto.com.co&cedula=" + $scope.cedula, {}
+            ).success(function (data) {
+                document.getElementById("result_escaneo").innerHTML = data;
+                $scope.estado = document.getElementById("txtestadoReserva").value;
+                $scope.idreserva = document.getElementById("txtidReserva").value;
+                window.location.href = './portero.html#/qr';
+            }).error(function (data, status, headers, config) {
+
+                $('#msgEsperaM').html("Los servicios web no están disponibes");
+                $('#dlgEsperaM').modal();
+            });
         }, function (error) {
-            alert(JSON.stringify(error));
+            $('#msgEsperaM').html("La camara no está disponible");
+            $('#dlgEsperaM').modal();
         });
     }
 
@@ -102,6 +118,38 @@ module.controller('porteroQrCtrl', ['$scope', '$http', '$localStorage', function
         $scope.obj = {};
         $scope.errores = {};
         window.location.href = './portero.html#/home';
+    }
+
+    $scope.confirmar = function () {
+        var error = false;
+
+        if (!$scope.obj.cedula) {
+            $scope.errores.cedula = "* Campo obligatorio";
+            error = true;
+        } else {
+            $scope.errores.cedula = "";
+        }
+
+        if (error) {
+            return;
+        }
+
+        //http://www.portoalto.com.co/webservice.php?opc=8&ruta=http://www.portoalto.com.co&cedula=1111
+        $http.get($scope.urlc + "/webservice.php?opc=9&ruta=http://www.portoalto.com.co&reservaId=" + $scope.idreserva, {}
+        ).success(function (data) {
+            if (data == "Guardardo") {
+                $('#msgEsperaM').html("Cliente Confirmado Correctamente");
+                $scope.cancelar();
+            } else {
+                $('#msgEsperaM').html("El Cliente no tiene reservas abiertas");
+            }
+            $('#dlgEsperaM').modal();
+        }).error(function (data, status, headers, config) {
+
+            $('#msgEsperaM').html("Los servicios web no están disponibes");
+            $('#dlgEsperaM').modal();
+        });
+
     }
 }]);
 
@@ -137,13 +185,13 @@ module.controller('porterohomeCtrl', ['$scope', '$http', '$localStorage', functi
         cordova.plugins.barcodeScanner.scan(
             function (result) {
                 alert("We got a barcode\n" +
-                      "Result: " + result.text + "\n" +
-                      "Format: " + result.format + "\n" +
-                      "Cancelled: " + result.cancelled);
-            }, 
+                    "Result: " + result.text + "\n" +
+                    "Format: " + result.format + "\n" +
+                    "Cancelled: " + result.cancelled);
+            },
             function (error) {
                 alert("Scanning failed: " + error);
             }
-         );
+        );
     }
 }]);
