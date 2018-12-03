@@ -192,33 +192,37 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
     }
 
 
-    $scope.scan = function() {
-        alert("Escanenado...");
-        cordova.plugins.barcodeScanner.scan(
-            function (result) {
-                alert(result.text);
-                if (!result.cancelled) {
-                    if (result.format == "QR_CODE") {
-                        navigator.notification.prompt("Please enter name of data", function (input) {
-                            var name = input.input1;
-                            var value = result.text;
+    $scope.scan = function () {
+        try {
+            cordova.plugins.barcodeScanner.scan(
+                function (result) {
+                    alert(result.text);
+                    if (!result.cancelled) {
+                        if (result.format == "QR_CODE") {
+                            navigator.notification.prompt("Please enter name of data", function (input) {
+                                var name = input.input1;
+                                var value = result.text;
 
-                            var data = localStorage.getItem("LocalData");
-                            console.log(data);
-                            data = JSON.parse(data);
-                            data[data.length] = [name, value];
+                                var data = localStorage.getItem("LocalData");
+                                console.log(data);
+                                data = JSON.parse(data);
+                                data[data.length] = [name, value];
 
-                            localStorage.setItem("LocalData", JSON.stringify(data));
+                                localStorage.setItem("LocalData", JSON.stringify(data));
 
-                            alert("Done");
-                        });
+                                alert("Done");
+                            });
+                        }
                     }
+                },
+                function (error) {
+                    alert("Scanning failed: " + error);
                 }
-            },
-            function (error) {
-                alert("Scanning failed: " + error);
-            }
-        );
+            );
+        } catch (err) {
+            alert("Error Escanenado..."+err);
+        }
+
     }
     /*$scope.scan = function () {
 
