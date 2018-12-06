@@ -40,7 +40,7 @@ module.controller('calificarCtrl', ['$scope', '$http', '$localStorage', function
             $('#dlgEsperaM').modal('hide');
             if(data=='Guardada'){
                 $('#msgEsperaM').html("Gracias por tu calificacion, nos ayudara a mejorar.");
-                window.location.href = './index.html#/home';
+                window.location.href = './portoalto.html#/home';
             } else {
                 $('#msgEsperaM').html(data);    
             }
