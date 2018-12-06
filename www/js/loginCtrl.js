@@ -109,8 +109,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
             return;
         }
 
-        $http.get($scope.urlc + "/webservice.php?opc=2" +
-            + "&correo=" + $scope.obj.email
+        $http.get($scope.urlc + "/webservice.php?opc=2&correo=" + $scope.obj.email
             + "&nombres=" + $scope.obj.nombres
             + "&apellidos=" + $scope.obj.apellidos
             + "&nodocumento=" + $scope.obj.ndoc

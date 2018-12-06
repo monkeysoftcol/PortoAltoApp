@@ -134,7 +134,7 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
     $scope.cancelar = function () {
         $scope.errores = {};
         $scope.obj = {};
-        window.location.href = './index.html#/home';
+        window.location.href = './portoalto.html#/home';
     };
 
 

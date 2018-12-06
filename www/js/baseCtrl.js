@@ -17,8 +17,8 @@ function baseController($scope, $localStorage) {
                 { "url": "#/menud", "texto": "Nuestra Carta Futbolera" },
                 { "url": "#/eventos", "texto": "Eventos" },
                 { "url": "#/promo", "texto": "Promociones" },
-                { "url": "#/pasoporto", "texto": "Pasaporto" },
-                { "url": "#/mipasoporto", "texto": "Mi pasaporto" }
+                { "url": "#/pasoporto", "texto": "Pasaporto" }
+                //{ "url": "#/mipasoporto", "texto": "Mi pasaporto" }
                 //{ "url": "#/solpassoporto", "texto": "Quiero mi pasaporto" }
             ];
         } else {

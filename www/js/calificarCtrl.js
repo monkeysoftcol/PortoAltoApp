@@ -54,6 +54,6 @@ module.controller('calificarCtrl', ['$scope', '$http', '$localStorage', function
     }
 
     $scope.cancelar = function(){
-        window.location.href = './index.html#/home';
+        window.location.href = './portoalto.html#/home';
     }
 }]);
