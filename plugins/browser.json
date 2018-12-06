@@ -30,6 +30,9 @@
     },
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "co.com.portoalto"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "co.com.portoalto"
     }
   },
   "dependent_plugins": {

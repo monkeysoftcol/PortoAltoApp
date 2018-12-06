@@ -27,6 +27,9 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "co.com.portoalto"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "co.com.portoalto"
     }
   },
   "dependent_plugins": {}
