@@ -16,7 +16,7 @@ module.controller('homeCtrl', ['$scope', '$http', '$localStorage', function ($sc
 
     $scope.loadinfo = function () {
         console.log($scope.filtro);
-        $('#msgEsperaM').html("Consultado...");
+        $('#msgEsperaM').html("Consultado..."+$scope.filtro);
         $('#dlgEsperaM').modal();
         $http.get($scope.url+$scope.filtro, {}
         ).success(function (data) {
