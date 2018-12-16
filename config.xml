@@ -33,9 +33,6 @@
         <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
             <string>Required for Scanning</string>
         </config-file>
-        <feature name="InAppBrowser">
-            <param name="ios-package" value="CDVInAppBrowser" />
-        </feature>
         <icon height="57" platform="ios" src="res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="res/icon/ios/icon@2x.png" width="114" />
         <icon height="40" platform="ios" src="res/icon/ios/icon-40.png" width="40" />
@@ -64,6 +61,45 @@
         <splash height="960" platform="ios" src="res/screen/ios/Default@2x~iphone.png" width="640" />
         <splash height="480" platform="ios" src="res/screen/ios/Default~iphone.png" width="320" />
     </platform>
+
+    <platform name="ios">
+            <js-module src="www/inappbrowser.js" name="inappbrowser">
+                <clobbers target="cordova.InAppBrowser.open" />
+                <clobbers target="window.open" />
+            </js-module>
+            <config-file target="config.xml" parent="/*">
+                <feature name="InAppBrowser">
+                    <param name="ios-package" value="CDVInAppBrowser" />
+                    <param name="onload" value="true" />
+                </feature>
+                <feature name="UIInAppBrowser">
+                    <param name="ios-package" value="CDVUIInAppBrowser" />
+                    <param name="onload" value="true" />
+                </feature>
+                <feature name="WKInAppBrowser">
+                    <param name="ios-package" value="CDVWKInAppBrowser" />
+                    <param name="onload" value="true" />
+                </feature>
+            </config-file>
+
+            <header-file src="src/ios/CDVInAppBrowser.h" />
+            <source-file src="src/ios/CDVInAppBrowser.m" />
+            <header-file src="src/ios/CDVInAppBrowserOptions.h" />
+            <source-file src="src/ios/CDVInAppBrowserOptions.m" />
+            <header-file src="src/ios/CDVInAppBrowserNavigationController.h" />
+            <source-file src="src/ios/CDVInAppBrowserNavigationController.m" />
+            <header-file src="src/ios/CDVUIInAppBrowser.h" />
+            <source-file src="src/ios/CDVUIInAppBrowser.m" />
+            <header-file src="src/ios/CDVWKInAppBrowser.h" />
+            <source-file src="src/ios/CDVWKInAppBrowser.m" />
+            <header-file src="src/ios/CDVWKInAppBrowserUIDelegate.h" />
+            <source-file src="src/ios/CDVWKInAppBrowserUIDelegate.m" />
+
+
+            <framework src="CoreGraphics.framework" />
+    </platform>
+
+
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="StatusBarStyle" value="lightcontent" />
