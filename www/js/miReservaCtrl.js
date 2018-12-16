@@ -1,4 +1,5 @@
 module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
+    window.open = cordova.InAppBrowser.open;
     $("#wrapper").toggleClass("toggled");
 
     $("html, body").animate({ scrollTop: 0 }, 600);
