@@ -1,15 +1,14 @@
 module.controller('homeCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
     console.log("Home ctrl");
 
-    /*if ($('#wrapper').is('toggled')) {
+    if ($('#wrapper').is('toggled')) {
         $('#wrapper').toggleClass('toggled');  
     }
     else{
         $('#wrapper').removeClass('toggled');
         
-    }*/
-    $('#dlgEsperaM').modal();
-    
+    }
+
     $scope.url = "http://www.portoalto.com.co/webservice.php?opc=12&buscador=";
     $scope.promociones;
     $("html, body").animate({ scrollTop: 0 }, 600);
@@ -31,7 +30,5 @@ module.controller('homeCtrl', ['$scope', '$http', '$localStorage', function ($sc
         });
     }
     //$scope.loadinfo();
-
-    $scope.string = 'Carlos Cepeda - 1124850065';
     
 }]);

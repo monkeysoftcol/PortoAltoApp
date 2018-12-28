@@ -27,7 +27,7 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
             document.getElementById("div_promos").innerHTML = $scope.promociones;
             //$('#dlgEsperaM').modal('hide');
 
-            $('#msgEsperaM').html("Tenga en cuenta que el costo de la reserva por cada persona es de $30.000 pesos consumibles");
+            $('#msgEsperaM').html("Para garantizar su reserva, el consumo mínimo debe ser no inferior a 30.000 pesos por persona.");
             $('#dlgEsperaM').modal();
         }).error(function (data, status, headers, config) {
             $('#dlgEsperaM').modal('hide');

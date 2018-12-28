@@ -101,3 +101,6 @@ body {
     border: 1px solid #151515 !important;
     box-shadow: 0 0 0 0.03rem #e8e4c4 !important;
 }
+.carousel-inner img {
+    margin: 0 auto;
+  }
