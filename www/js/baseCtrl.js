@@ -23,9 +23,9 @@ function baseController($scope, $localStorage) {
             ];
         } else {
             $scope.listaMenu = [
-                { "url": "#/mireserva", "texto": "Mi Ultima Reserva" },
-                { "url": "#/calificar", "texto": "Calificar Servicio" },
-                { "url": "#/salir", "texto": "Salir" }
+                { "url": "#/mireserva", "texto": "Mi Ultima Reserva" , "img":"img/menui/reserva.png"},
+                { "url": "#/calificar", "texto": "Calificar Servicio", "img":"img/menui/calificar.png" },
+                { "url": "#/salir", "texto": "Salir", "img":"img/menui/salir.png" }
             ];
         }
         $localStorage.menu = $scope.listaMenu;

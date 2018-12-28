@@ -89,3 +89,15 @@ body {
     backdrop-filter: grayscale() blur(10px); /* Chrome and Opera */
     background-color: rgba(255, 255, 255, 0.3);
 }
+
+.form-control{
+    color: #e8e4c4 !important;
+    background-color: #343a40  !important;
+    border: 1px solid #151515 !important;
+}
+.form-control:focus{
+    color: #e8e4c4 !important;
+    background-color: #343a40  !important;
+    border: 1px solid #151515 !important;
+    box-shadow: 0 0 0 0.03rem #e8e4c4 !important;
+}

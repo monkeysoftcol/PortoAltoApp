@@ -8,7 +8,8 @@ module.controller('homeCtrl', ['$scope', '$http', '$localStorage', function ($sc
         $('#wrapper').removeClass('toggled');
         
     }*/
-
+    $('#dlgEsperaM').modal();
+    
     $scope.url = "http://www.portoalto.com.co/webservice.php?opc=12&buscador=";
     $scope.promociones;
     $("html, body").animate({ scrollTop: 0 }, 600);
