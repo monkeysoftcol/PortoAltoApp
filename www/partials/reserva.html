@@ -9,16 +9,14 @@
             <div class="form-group" ng-class="{'has-error': errores.fecha}">
                 <label class="label_form">Fecha de reserva:</label>
                 <input type="date" class="form-control" name="fecha_reserva" id="fecha_reserva" class="form-control"
-                    onchange="mesas()" ng-model="obj.fecha" style="height:40px;">
+                    ng-model="obj.fecha" style="height:40px;"><!-- onchange="mesas()"-->
                 <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.fecha">{{errores.fecha}}</small>
             </div>
             <div class="form-group" ng-class="{'has-error': errores.hora}">
                 <label class="label_form">Hora de reserva:</label>
                 <select id="hora_reserva" name="hora_reserva" class="form-control" data-native-menu="false" data-theme="a" required="required"
-                    ng-model="obj.hora" ng-change="loadMesas()">
+                    ng-model="obj.hora"><!--ng-change="loadMesas()"-->
                     <option value="">Seleccionar...</option>
-                    <option value="10:00:00">10:00 AM</option>
-                    <option value="11:00:00">11:00 AM</option>
                     <option value="12:00:00">12:00 PM</option>
                     <option value="13:00:00">1:00 PM</option>
                     <option value="14:00:00">2:00 PM</option>
@@ -29,20 +27,16 @@
                     <option value="19:00:00">7:00 PM</option>
                     <option value="20:00:00">8:00 PM</option>
                     <option value="21:00:00">9:00 PM</option>
-                    <option value="22:00:00">10:00 PM</option>
-                    <option value="23:00:00">11:00 PM</option>
-                    <option value="23:59:00">12:00 AM</option>
-                    <option value="1:00:00">1:00 AM</option>
                 </select>
                 <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.hora">{{errores.hora}}</small>
             </div>
-            <div class="form-group" ng-class="{'has-error': errores.hora}">
+            <!--<div class="form-group" ng-class="{'has-error': errores.hora}">
                 <label class="label_form">Mesas disponibles:</label>
                 <div id="div_mesas">
 
                 </div>
                 <small id="emailHelp" class="form-text text-muted obligatorio" ng-show="errores.mesa">{{errores.mesa}}</small>
-            </div>
+            </div>-->
             <div class="form-group" ng-class="{'has-error': errores.nropersonas}">
                 <label class="label_form">Número de Personas:</label>
                 <select name="personas" id="personas" required="required" class="form-control" ng-model="obj.nropersonas" data-native-menu="false" data-theme="a">
@@ -67,7 +61,7 @@
                     <option value="17">17 Personas</option>
                     <option value="18">18 Personas</option>
                     <option value="19">19 Personas</option>
-                    <option value="20">20 Personas</option>
+                    <option value="20">20 Personas o más</option>
                 </select>
                 <small class="form-text text-muted obligatorio" ng-show="errores.nropersonas">{{errores.nropersonas}}</small>
             </div>

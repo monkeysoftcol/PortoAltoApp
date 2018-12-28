@@ -83,8 +83,8 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
         } else {
             $scope.errores.hora = '';
         }
-        if (document.getElementById("mesas_reserva")) {
-            $scope.obj.mesa = document.getElementById("mesas_reserva").value;
+        /*if (document.getElementById("mesas_reserva")) {
+            //$scope.obj.mesa = document.getElementById("mesas_reserva").value;
             if (!$scope.obj.mesa) {
                 $scope.errores.mesa = 'Campo obligatorio';
                 error = true;
@@ -94,7 +94,7 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
         } else {
             $scope.errores.mesa = 'Para consultar las mesas disponibles debe seleccionar la fecha y hora de reserva';
             error = true;
-        }
+        }*/
         if (!$scope.obj.personas) {
             $scope.errores.nropersonas = 'Campo obligatorio';
             error = true;
