@@ -14,8 +14,9 @@
             </div>
             <div class="form-group" ng-class="{'has-error': errores.hora}">
                 <label class="label_form">Hora de reserva:</label>
-                <select id="hora_reserva" name="hora_reserva" class="form-control" data-native-menu="false" data-theme="a" required="required"
-                    ng-model="obj.hora"><!--ng-change="loadMesas()"-->
+                <select id="hora_reserva" name="hora_reserva" class="form-control" data-native-menu="false" data-theme="a"
+                    required="required" ng-model="obj.hora">
+                    <!--ng-change="loadMesas()"-->
                     <option value="">Seleccionar...</option>
                     <option value="12:00:00">12:00 PM</option>
                     <option value="13:00:00">1:00 PM</option>
@@ -39,7 +40,8 @@
             </div>-->
             <div class="form-group" ng-class="{'has-error': errores.nropersonas}">
                 <label class="label_form">Número de Personas:</label>
-                <select name="personas" id="personas" required="required" class="form-control" ng-model="obj.nropersonas" data-native-menu="false" data-theme="a">
+                <select name="personas" id="personas" required="required" class="form-control" ng-model="obj.nropersonas"
+                    data-native-menu="false" data-theme="a">
                     <!--  onchange="ejecutar_ajax()" -->
                     <option value="" selected="selected">Seleccionar....</option>
                     <option value="1">1 Persona</option>
@@ -67,9 +69,14 @@
             </div>
             <div class="form-group" ng-class="{'has-error': errores.motivo}">
                 <label class="label_form">Motivo :</label>
-                <input type="text" class="form-control" name="txtmotivo" id="txtmotivo" class="form-control"
-                    ng-model="obj.motivo">
+                <input type="text" class="form-control" name="txtmotivo" id="txtmotivo" class="form-control" ng-model="obj.motivo">
                 <small class="form-text text-muted obligatorio" ng-show="errores.motivo">{{errores.motivo}}</small>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errores.terminos}">
+                
+                <input type="checkbox" class="form-control" name="txtacepta" id="txtacepta" class="form-control" ng-model="acepta">
+                <label class="label_form">Acepto las condiciones de consumo mínimo por persona en una reserva ($30.000)</label>
+                <small class="form-text text-muted obligatorio" ng-show="errores.terminos">{{errores.terminos}}</small>
             </div>
         </form>
     </div>

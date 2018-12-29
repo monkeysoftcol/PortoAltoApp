@@ -15,7 +15,21 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
     $scope.listaMesas;
     $scope.listDecoracion = [];
 
+    $scope.listaDecoreaciones=[];
+    $scope.decoracionSelected;
+    $scope.acepta = false;
 
+    $scope.test = function(){
+        $http.get("http://www.portoalto.com.co/webservice.php?opc=16", {}
+            ).success(function (data) {
+                $scope.listaDecoreaciones= data;
+            }).error(function (data, status, headers, config) {
+                $('#dlgEsperaM').modal('hide');
+                $('#msgEsperaM').html("Los servicios web no están disponibes");
+                $('#dlgEsperaM').modal();
+            });
+    }
+    //$scope.test();
 
 
     $scope.loadpromociones = function () {
@@ -27,8 +41,8 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
             document.getElementById("div_promos").innerHTML = $scope.promociones;
             //$('#dlgEsperaM').modal('hide');
 
-            $('#msgEsperaM').html("Para garantizar su reserva, el consumo mínimo debe ser no inferior a 30.000 pesos por persona.");
-            $('#dlgEsperaM').modal();
+            //$('#msgEsperaM').html("Para garantizar su reserva, el consumo mínimo debe ser no inferior a 30.000 pesos por persona.");
+            //$('#dlgEsperaM').modal();
         }).error(function (data, status, headers, config) {
             $('#dlgEsperaM').modal('hide');
             $('#msgEsperaM').html("Los servicios web no están disponibes");
@@ -61,14 +75,15 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
     $scope.saveReserva = function () {
         $scope.obj.cedula = $localStorage.cedula;
         var error = false;
-        $scope.obj.decora = document.getElementById("decora").value;
+       
         $scope.obj.horaReserva = document.getElementById("hora_reserva").value;
         $scope.obj.personas = document.getElementById("personas").value;
 
-        if (!$scope.obj.decora) {
+        if (!$scope.decoracionSelected) {
             $scope.errores.tdecoracion = 'Campo obligatorio';
             error = true;
         } else {
+            $scope.obj.decora = $scope.decoracionSelected.idDecoracion;
             $scope.errores.tdecoracion = '';
         }
         if (!$scope.obj.fecha) {
@@ -83,6 +98,14 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
         } else {
             $scope.errores.hora = '';
         }
+
+        if(!$scope.acepta){
+            $scope.errores.terminos = 'Campo obligatorio';
+            error = true;
+        } else {
+            $scope.errores.terminos = '';
+        }
+
         /*if (document.getElementById("mesas_reserva")) {
             //$scope.obj.mesa = document.getElementById("mesas_reserva").value;
             if (!$scope.obj.mesa) {

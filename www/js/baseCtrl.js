@@ -11,13 +11,14 @@ function baseController($scope, $localStorage) {
     $scope.listarMenu = function (user) {
         if (!user) {
             $scope.listaMenu = [
-                { "url": "#/home", "texto": "Inicio", "img":"img/menui/lupa.png" },
+                { "url": "#/pasoporto", "texto": "Pasaporto" , "img":"img/menui/quees.png" },
                 { "url": "#/about", "texto": "Acerca de porto alto", "img":"img/menui/acerca.png"  },
+                { "url": "#/home", "texto": "Buscar", "img":"img/menui/lupa.png" },
                 { "url": "#/menu", "texto": "Nuestra Carta" , "img":"img/menui/carta.png" },
                 { "url": "#/menud", "texto": "Nuestra Carta Futbolera" , "img":"img/menui/cartaf.png" },
                 { "url": "#/eventos", "texto": "Eventos" , "img":"img/menui/eventos.png" },
-                { "url": "#/promo", "texto": "Promociones" , "img":"img/menui/promocion.png" },
-                { "url": "#/pasoporto", "texto": "Pasaporto" , "img":"img/menui/quees.png" }
+                { "url": "#/promo", "texto": "Promociones" , "img":"img/menui/promocion.png" }
+                
                 //{ "url": "#/mipasoporto", "texto": "Mi pasaporto" }
                 //{ "url": "#/solpassoporto", "texto": "Quiero mi pasaporto" }
             ];
