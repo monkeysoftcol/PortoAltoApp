@@ -1,6 +1,7 @@
 module.controller('miPasoportoCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
-    //$("#wrapper").toggleClass("toggled");
-    baseController($scope,$localStorage);
+    baseController($scope, $localStorage);
+    $scope.myFunction(false);
+    
     $("html, body").animate({ scrollTop: 0 }, 600);
     $scope.url ="http://www.portoalto.com.co/api/v1/infoUser";
     $scope.object={};

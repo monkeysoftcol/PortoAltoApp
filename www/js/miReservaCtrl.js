@@ -1,6 +1,7 @@
 module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
-    //window.open = cordova.InAppBrowser.open;
-    $("#wrapper").toggleClass("toggled");
+    window.open = cordova.InAppBrowser.open;
+    baseController($scope, $localStorage);
+    $scope.myFunction(false);
 
     $("html, body").animate({ scrollTop: 0 }, 600);
     $scope.url = "http://www.portoalto.com.co/webservice.php?opc=5";

@@ -1,13 +1,8 @@
 module.controller('homeCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
-    console.log("Home ctrl");
+    
 
-    if ($('#wrapper').is('toggled')) {
-        $('#wrapper').toggleClass('toggled');  
-    }
-    else{
-        $('#wrapper').removeClass('toggled');
-        
-    }
+    baseController($scope, $localStorage);
+    $scope.myFunction(false);
 
     $scope.url = "http://www.portoalto.com.co/webservice.php?opc=12&buscador=";
     $scope.promociones;

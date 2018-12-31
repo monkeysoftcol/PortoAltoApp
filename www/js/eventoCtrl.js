@@ -1,6 +1,8 @@
 module.controller('eventoCtrl', ['$scope', '$http', function ($scope, $http) {
-    console.log("eventoCtrl ctrl");
-    $("#wrapper").toggleClass("toggled");
+    
+    
+    baseController($scope, $localStorage);
+    $scope.myFunction(false);
     
     $scope.url = "http://www.portoalto.com.co/webservice.php?opc=13";
     $scope.eventos;

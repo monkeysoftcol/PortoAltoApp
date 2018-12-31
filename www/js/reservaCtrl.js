@@ -3,6 +3,8 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
     $("html, body").animate({ scrollTop: 0 }, 600);
     baseController($scope, $localStorage);
 
+    $scope.myFunction(false);
+
     console.log("reserva....");
     $scope.url = "http://www.portoalto.com.co/webservice.php?opc=3";//decoración
     $scope.urlb = "http://www.portoalto.com.co/webservice.php?opc=4";
