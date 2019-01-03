@@ -3,6 +3,22 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
       baseController($scope, $localStorage);
       $scope.myFunction(false);
 
+      $("#test").swipe({
+            swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+                  //console.log(direction);
+                  if (direction) {
+                        if (direction == 'right') {
+                              $( "#btnPreview" ).click();
+                        } else {
+                              $( "#btnNext" ).click();
+                        }
+                  }
+
+            },
+            //Default is 75px, set to 0 for demo so any distance triggers swipe
+            threshold: 0
+      });
+
 
       console.log("menu cargado!!!!");
       $scope.url = '';
@@ -55,34 +71,38 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
       //carousel
       $scope.imagenActual = 1;
 
-      $scope.setTab = function(imagen) {
+      $scope.setTab = function (imagen) {
             $scope.imagenActual = imagen;
       }
-      ;
-      $scope.isSet = function(imagen) {
+            ;
+      $scope.isSet = function (imagen) {
             return $scope.imagenActual === imagen;
       }
-      ;
+            ;
 
-      $scope.slideDerecha = function(){
-            console.log(">>>>"+$scope.imagenActual);
-            var ultima =3;
+      $scope.slideDerecha = function () {
+            //console.log(">>>> Der :" + $scope.imagenActual);
+            var ultima = 3;
             var primera = 1;
-            if($scope.imagenActual<ultima){
-                  $scope.setTab($scope.imagenActual+1);
+            if ($scope.imagenActual < ultima) {
+                  $scope.setTab($scope.imagenActual + 1);
+                  $scope.isSet($scope.imagenActual + 1);
             } else {
                   $scope.setTab(primera);
+                  $scope.isSet(primera);
             }
       }
 
-      $scope.slideIzquierda = function(){
-            console.log(">>>>"+$scope.imagenActual);
+      $scope.slideIzquierda = function () {
+            //console.log(">>>>Izq :" + $scope.imagenActual);
             var primera = 1;
-            var ultima =3;
-            if($scope.imagenActual>primera){
-                  $scope.setTab($scope.imagenActual-1);
+            var ultima = 3;
+            if ($scope.imagenActual > primera) {
+                  $scope.setTab($scope.imagenActual - 1);
+                  $scope.isSet($scope.imagenActual - 1);
             } else {
                   $scope.setTab(ultima);
+                  $scope.isSet(ultima);
             }
       }
 
