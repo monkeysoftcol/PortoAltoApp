@@ -52,17 +52,38 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
             $scope.showList = true;
       }
 
-      //pruebas carousel
-      $scope.w = window.innerWidth;
-      $scope.h = window.innerHeight;
-      $scope.uri = "http://lorempixel.com";
-      $scope.folders = ['abstract', 'animals', 'business', 'cats', 'city', 'food', 'night', 'life', 'fashion', 'people', 'nature', 'sports', 'technics', 'transport'];
-      $scope.images = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-      $scope.currentFolder = $scope.folders[0];
-      $scope.selectFolder = function (folder) {
-            $scope.currentFolder = folder;
-      };
-      $scope.activeFolder = function (folder) {
-            return (folder === $scope.currentFolder);
-      };
+      //carousel
+      $scope.imagenActual = 1;
+
+      $scope.setTab = function(imagen) {
+            $scope.imagenActual = imagen;
+      }
+      ;
+      $scope.isSet = function(imagen) {
+            return $scope.imagenActual === imagen;
+      }
+      ;
+
+      $scope.slideDerecha = function(){
+            console.log(">>>>"+$scope.imagenActual);
+            var ultima =3;
+            var primera = 1;
+            if($scope.imagenActual<ultima){
+                  $scope.setTab($scope.imagenActual+1);
+            } else {
+                  $scope.setTab(primera);
+            }
+      }
+
+      $scope.slideIzquierda = function(){
+            console.log(">>>>"+$scope.imagenActual);
+            var primera = 1;
+            var ultima =3;
+            if($scope.imagenActual>primera){
+                  $scope.setTab($scope.imagenActual-1);
+            } else {
+                  $scope.setTab(ultima);
+            }
+      }
+
 }]);

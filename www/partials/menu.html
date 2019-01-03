@@ -1,11 +1,68 @@
 
-<div class="row" ng-show="showList">
+<div id="demo" class="carousel slide">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h2 style="color:#e8e4c4" class="text-center">Cervezas</h2>
+            <hr>
+        </div>
+
+    </div>
+
+    <!-- Indicators -->
+    <!--
+            <ul class="carousel-indicators">
+          <li ng-click="setTab(1)" data-slide-to="1" ng-class="{'active': isSet(1)}"></li>
+          <li ng-click="setTab(2)" data-slide-to="2" ng-class="{'active': isSet(2)}"></li>
+          <li ng-click="setTab(3)" data-slide-to="3" ng-class="{'active': isSet(3)}"></li>
+        </ul>-->
+
+    <!-- The slideshow -->
+    <div class="carousel-inner text-center">
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(1)}" ng-show="isSet(1)">
+            <p style="color:#e8e4c4"><strong>Porto Negra</strong></p>
+            <img class="cepeda" src="img/menus/1.png" alt="Los Angeles" width="210">
+            <p style="color:#e8e4c4">1Lt <strong>$16.900</strong></p>
+            <p style="color:#e8e4c4">20oz <strong>$12.500</strong></p>
+            <p style="color:#e8e4c4">Jarra <strong>$34.000</strong></p>
+            <p style="color:#e8e4c4">Cerveza compuesta por trigo, agua, otras cosas que el cliente quiera poner en la
+                descripción del menú. este es un texto de ejemplo</p>
+        </div>
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(2)}" ng-show="isSet(2)">
+                <p style="color:#e8e4c4"><strong>Porto Negra</strong></p>
+                <img src="img/menus/2.jpg" alt="Los Angeles" width="210">
+                <p style="color:#e8e4c4">1Lt <strong>$16.900</strong></p>
+                <p style="color:#e8e4c4">20oz <strong>$12.500</strong></p>
+                <p style="color:#e8e4c4">Jarra <strong>$34.000</strong></p>
+                <p style="color:#e8e4c4">Cerveza compuesta por trigo, agua, otras cosas que el cliente quiera poner en la
+                    descripción del menú. este es un texto de ejemplo</p>
+            </div>
+            <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(3)}" ng-show="isSet(3)">
+                    <p style="color:#e8e4c4"><strong>Porto Negra</strong></p>
+                    <img src="img/menus/3.jpg" alt="Los Angeles" width="210">
+                    <p style="color:#e8e4c4">1Lt <strong>$16.900</strong></p>
+                    <p style="color:#e8e4c4">20oz <strong>$12.500</strong></p>
+                    <p style="color:#e8e4c4">Jarra <strong>$34.000</strong></p>
+                    <p style="color:#e8e4c4">Cerveza compuesta por trigo, agua, otras cosas que el cliente quiera poner en la
+                        descripción del menú. este es un texto de ejemplo</p>
+                </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" ng-click="slideIzquierda()">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" ng-click="slideDerecha()">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+</div>
+<div class="row" ng-show="!showList">
     <div class="col-lg-12 text-center">
         <h3 class="titulo">Menú</h3>
         <hr>
     </div>
 </div>
-<div class="row" ng-show="showList">
+<div class="row" ng-show="!showList">
     <div class="col-lg-12 text-center">
         <a ng-click="showMenu(1)" data-transition="flip"><img style="width: 80%" src="img/entradas.png"></a>
         <a ng-click="showMenu(2)" data-transition="flip"><img style="width: 80%" src="img/platosfuertes.png"></a>
