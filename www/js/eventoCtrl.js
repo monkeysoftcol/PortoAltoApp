@@ -4,7 +4,7 @@ module.controller('eventoCtrl', ['$scope', '$http', function ($scope, $http) {
     baseController($scope, $localStorage);
     $scope.myFunction(false);
     
-    $scope.url = "http://www.portoalto.com.co/webservice.php?opc=13";
+    $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=13";
     $scope.eventos;
     $("html, body").animate({ scrollTop: 0 }, 600);
     

@@ -2,11 +2,11 @@ module.controller('promoCtrl', ['$scope', '$http', function ($scope, $http) {
 
     baseController($scope, $localStorage);
     $scope.myFunction(false);
-
     $("html, body").animate({ scrollTop: 0 }, 600);
-    $scope.url = "http://www.portoalto.com.co/webservice.php?opc=14";
+    
+    $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=14";
     $scope.promociones;
-    $("html, body").animate({ scrollTop: 0 }, 600);
+    
 
     $scope.loadinfo = function () {
         $('#msgEsperaM').html("Consultado...");

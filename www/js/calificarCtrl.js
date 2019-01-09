@@ -5,7 +5,7 @@ module.controller('calificarCtrl', ['$scope', '$http', '$localStorage', function
     $scope.myFunction(false);
 
 
-    $scope.ruta = "http://www.portoalto.com.co";
+    $scope.ruta = "http://www.movil.portoalto.com.co";
     $scope.errores ={};
     $scope.object = {};
 

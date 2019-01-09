@@ -4,7 +4,7 @@ module.controller('homeCtrl', ['$scope', '$http', '$localStorage', function ($sc
     baseController($scope, $localStorage);
     $scope.myFunction(false);
 
-    $scope.url = "http://www.portoalto.com.co/webservice.php?opc=12&buscador=";
+    $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=12&buscador=";
     $scope.promociones;
     $("html, body").animate({ scrollTop: 0 }, 600);
     $scope.filtro='';

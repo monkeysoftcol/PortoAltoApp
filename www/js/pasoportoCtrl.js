@@ -3,7 +3,7 @@ module.controller('miPasoportoCtrl', ['$scope', '$http', '$localStorage', functi
     $scope.myFunction(false);
     
     $("html, body").animate({ scrollTop: 0 }, 600);
-    $scope.url ="http://www.portoalto.com.co/api/v1/infoUser";
+    $scope.url ="http://www.movil.portoalto.com.co/api/v1/infoUser";
     $scope.object={};
     $scope.object.cedula = $localStorage.cedula;
     $scope.string = String($localStorage.cedula);

@@ -87,7 +87,7 @@ module.controller('porteroQrCtrl', ['$scope', '$http', '$localStorage', function
 
     $scope.obj = {};
     $scope.errores = {};
-    $scope.urlc = "http://www.portoalto.com.co";
+    $scope.urlc = "http://www.movil.portoalto.com.co";
     $scope.cedula;
     $scope.estado;
     $scope.idreserva;
@@ -178,11 +178,11 @@ module.controller('porterohomeCtrl', ['$scope', '$http', '$localStorage', '$cord
     console.log(">>> porterohomeCtrl");
 
     $scope.escanerQr = function () {
-        alert("Escanear codigo");
+        //alert("Escanear codigo");
     };
 
     $scope.buscarUser = function () {
-        alert("buscar usuario");
+        //alert("buscar usuario");
     };
 
     $scope.cancelar = function () {

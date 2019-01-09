@@ -6,9 +6,9 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
         $scope.myFunction(false);
 
         console.log("reserva....");
-        $scope.url = "http://www.portoalto.com.co/webservice.php?opc=3";//decoración
-        $scope.urlb = "http://www.portoalto.com.co/webservice.php?opc=4";
-        $scope.urlc = "http://www.portoalto.com.co/webservice.php?opc=6";
+        $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=3";//decoración
+        $scope.urlb = "http://www.movil.portoalto.com.co/webservice.php?opc=4";
+        $scope.urlc = "http://www.movil.portoalto.com.co/webservice.php?opc=6";
 
         $scope.errores = {};
         $scope.obj = {};
@@ -22,7 +22,7 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
         $scope.acepta = false;
 
         $scope.test = function () {
-            $http.get("http://www.portoalto.com.co/webservice.php?opc=16", {}
+            $http.get("http://www.movil.portoalto.com.co/webservice.php?opc=16", {}
             ).success(function (data) {
                 $scope.listaDecoreaciones = data;
             }).error(function (data, status, headers, config) {

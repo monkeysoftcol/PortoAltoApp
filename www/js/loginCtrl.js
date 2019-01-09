@@ -4,7 +4,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
 
     $scope.obj = {};
     $scope.errores = {};
-    $scope.urlc = "http://www.portoalto.com.co";
+    $scope.urlc = "http://www.movil.portoalto.com.co";
     $scope.isLogin = true;
     //poner en falsse
     $scope.isPorto = false;
@@ -67,7 +67,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
 
     $scope.registrar = function () {
         var error = false;
-        $scope.urlc = "http://www.portoalto.com.co";
+        //$scope.urlc = "http://www.portoalto.com.co";
 
         if (!$scope.obj.email) {
             $scope.errores.email = "* Ingrese un correo válido";
@@ -153,7 +153,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
 
     $scope.loginAdmin = function () {
         var error = false;
-        $scope.urlc = "http://www.portoalto.com.co";
+        //$scope.urlc = "http://www.portoalto.com.co";
 
         if (!$scope.obj.usuario) {
             $scope.errores.usuario = "* Campo obligatorio";
@@ -199,7 +199,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
         try {
             cordova.plugins.barcodeScanner.scan(
                 function (result) {
-                    alert(result.text);
+                    //alert(result.text);
                     if (!result.cancelled) {
                         if (result.format == "QR_CODE") {
                             navigator.notification.prompt("Please enter name of data", function (input) {
@@ -213,7 +213,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
 
                                 localStorage.setItem("LocalData", JSON.stringify(data));
 
-                                alert("Done");
+                                //alert("Done");
                             });
                         }
                     }
@@ -232,11 +232,11 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
             $cordovaBarcodeScanner
                 .scan()
                 .then(function (result) {
-                    alert(JSON.stringify(result));
+                    //alert(JSON.stringify(result));
                 }, function (err) {
                     $scope.scanResult = 'SCAN ERROR (see console)';
                     console.error(err);
-                    alert(err);
+                    //alert(err);
                 });
         }
         catch (err) {
@@ -256,7 +256,7 @@ module.controller('loginCtrl', ['$scope', '$http', '$localStorage', '$cordovaBar
             };
 
             $cordovaCamera.getPicture(options).then(function (imageURI) {
-                alert("tengo la imagen");
+                //alert("tengo la imagen");
             }, function (err) {
                 alert(err);
             });

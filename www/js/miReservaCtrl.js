@@ -4,7 +4,7 @@ module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function
     $scope.myFunction(false);
 
     $("html, body").animate({ scrollTop: 0 }, 600);
-    $scope.url = "http://www.portoalto.com.co/webservice.php?opc=5";
+    $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=5";
     $scope.reserva;
     $("html, body").animate({ scrollTop: 0 }, 600);
     $scope.estado = "";
@@ -41,7 +41,7 @@ module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function
 
     $scope.cancelar = function () {
 
-        $scope.url2 = "http://www.portoalto.com.co/webservice.php?opc=18";
+        $scope.url2 = "http://www.movil.portoalto.com.co/webservice.php?opc=18";
         $scope.reserva = document.getElementById("reservaId").value;
         console.log("Datos = " + $scope.estado + " >>> " + $scope.reserva);
         if ($scope.reserva) {
