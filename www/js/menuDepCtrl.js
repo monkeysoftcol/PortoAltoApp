@@ -61,8 +61,30 @@ module.controller('menuDepCtrl', ['$scope', '$http', '$localStorage', function (
       $scope.viewDetail = false;
       $scope.base = "http://www.portoalto.com.co/servicios/v1/";
       $scope.titulo;
+      $scope.totalRegistros;
 
-      $scope.loadMenuCategoria = function (categoria, texto) {
+
+      $scope.loadMenuCategoria = function (categoria,texto) {
+            $http.get($scope.base + "menu/count/" + categoria, {}
+            ).success(function (data) {
+                  console.log(JSON.stringify(data));
+                  $('#dlgLoading').modal('hide');
+                  if (data.status === 'SUCCESS') {
+                        $scope.totalRegistros = data.object;
+                        $scope.loadMenuCategoriaDetalle(categoria,texto);
+                  } else {
+                        $('#msgEsperaM').html(data.message);
+                        $('#dlgEsperaM').modal();
+                  }
+
+            }).error(function (data, status, headers, config) {
+                  $('#dlgEsperaM').modal('hide');
+                  $('#msgEsperaM').html("Los servicios web no están disponibes");
+                  $('#dlgEsperaM').modal();
+            });
+      }
+
+      $scope.loadMenuCategoriaDetalle = function (categoria, texto) {
             $scope.titulo = texto;
             $('#dlgLoading').modal();
 
@@ -104,7 +126,7 @@ module.controller('menuDepCtrl', ['$scope', '$http', '$localStorage', function (
 
       $scope.slideDerecha = function () {
             //console.log(">>>> Der :" + $scope.imagenActual);
-            var ultima = 3;
+            var ultima = $scope.totalRegistros;
             var primera = 1;
             if ($scope.imagenActual < ultima) {
                   $scope.setTab($scope.imagenActual + 1);
@@ -118,7 +140,7 @@ module.controller('menuDepCtrl', ['$scope', '$http', '$localStorage', function (
       $scope.slideIzquierda = function () {
             //console.log(">>>>Izq :" + $scope.imagenActual);
             var primera = 1;
-            var ultima = 3;
+            var ultima = $scope.totalRegistros;
             if ($scope.imagenActual > primera) {
                   $scope.setTab($scope.imagenActual - 1);
                   $scope.isSet($scope.imagenActual - 1);
