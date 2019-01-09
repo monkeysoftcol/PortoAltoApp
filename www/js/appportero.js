@@ -6,6 +6,7 @@ var module = angular.module("Pasoporto",["ngRoute","ngStorage","ja.qr","ngCordov
         a.when('/reserva', {templateUrl: 'partials/portero/reserva.html', controller: 'porteroReservaCtrl'});
         a.when('/qr', {templateUrl: 'partials/portero/cliente.html', controller: 'porteroQrCtrl'});
         a.when('/home', {templateUrl: 'partials/portero/home.html', controller: 'porterohomeCtrl'});
+        a.when('/cotizar', {templateUrl: 'partials/portero/cotizar.html', controller: 'cotizarCtrl'});
         a.otherwise({redirectTo:"/home"});
     }]).directive('capitalize', function () {
             return {

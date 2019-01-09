@@ -104,3 +104,10 @@ body {
 .carousel-inner img {
     margin: 0 auto;
   }
+
+
+  .large-textarea textarea {
+    font-family: Courier, sans-serif;
+    height: 10em;
+    width: 500px;
+ }

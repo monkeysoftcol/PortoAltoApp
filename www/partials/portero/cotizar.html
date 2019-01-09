@@ -1,0 +1,131 @@
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h2 style="color:#e8e4c4 !important">Realizar cotizaci&oacute;n</h2>
+        <hr>
+    </div>
+    <div class="col-lg-12">
+        <form>
+            <div class="form-group" ng-class="{'obligatorio': errores.cliente}">
+                <label class="label_form control-label">Nombre del cliente</label>
+                <input type="text" class="form-control" name="txtcliente" id="txtcliente" class="form-control" ng-model="obj.cliente">
+            </div>
+            <div class="form-group" ng-class="{'obligatorio': errores.empresa}">
+                <label class="label_form control-label">Empresa</label>
+                <input type="text" class="form-control" name="txtempresa" id="txtempresa" class="form-control" ng-model="obj.empresa">
+            </div>
+            <div class="form-group" ng-class="{'obligatorio': errores.telefono}">
+                <label class="label_form control-label">Tel&eacute;fono</label>
+                <input type="text" class="form-control" name="txttelefono" id="txttelefono" class="form-control"
+                    ng-model="obj.telefono">
+            </div>
+            <div class="form-group" ng-class="{'obligatorio': errores.celular}">
+                <label class="label_form control-label">Celular</label>
+                <input type="text" class="form-control" name="txtcelular" id="txtcelular" class="form-control" ng-model="obj.celular">
+            </div>
+            <div class="form-group" ng-class="{'obligatorio': errores.ciudad}">
+                <label class="label_form control-label">Ciudad</label>
+                <input type="text" class="form-control" name="txtciudad" id="txtciudad" class="form-control" ng-model="obj.ciudad">
+            </div>
+            <div class="form-group" ng-class="{'obligatorio': errores.email}">
+                <label class="label_form control-label">Email</label>
+                <input type="text" class="form-control" name="txtemail" id="txtemail" class="form-control" ng-model="obj.email">
+            </div>
+            <div class="form-group" ng-class="{'obligatorio': errores.locacion}">
+                <label class="label_form control-label">Locación</label>
+                <input type="text" class="form-control" name="txtlocacion" id="txtlocacion" class="form-control"
+                    ng-model="obj.locacion">
+            </div>
+            <div class="form-group" ng-class="{'has-error': errores.fecha}">
+                <label class="label_form">Fecha del evento:</label>
+                <input type="date" class="form-control" name="txtfechaE" id="txtfechaE" class="form-control" ng-model="obj.fecha"
+                    style="height:40px;">
+                <small class="form-text text-muted obligatorio" ng-show="errores.fecha">{{errores.fecha}}</small>
+            </div>
+            <div class="form-group" ng-class="{'obligatorio': errores.locacion}">
+                <label class="label_form control-label">Evento</label>
+                <input type="text" class="form-control" name="txtevento" id="txtevento" class="form-control" ng-model="obj.evento">
+            </div>
+            <div class="form-group" ng-class="{'obligatorio': errores.horass}">
+                <label class="label_form control-label">Horas servicio</label>
+                <input type="number" class="form-control" name="txthorass" id="txthorass" class="form-control" ng-model="obj.horass">
+            </div>
+            <div class="form-group" ng-class="{'has-error': errores.horai}">
+                <label class="label_form">Hora Ingreso</label>
+                <select id="txthorain" name="txthorain" class="form-control" data-native-menu="false" data-theme="a"
+                    required="required" ng-model="obj.horai">
+                    <!--ng-change="loadMesas()"-->
+                    <option value="">Seleccionar...</option>
+                    <option value="12:00:00">12:00 PM</option>
+                    <option value="13:00:00">1:00 PM</option>
+                    <option value="14:00:00">2:00 PM</option>
+                    <option value="15:00:00">3:00 PM</option>
+                    <option value="16:00:00">4:00 PM</option>
+                    <option value="17:00:00">5:00 PM</option>
+                    <option value="18:00:00">6:00 PM</option>
+                    <option value="19:00:00">7:00 PM</option>
+                    <option value="20:00:00">8:00 PM</option>
+                    <option value="21:00:00">9:00 PM</option>
+                </select>
+                <small class="form-text text-muted obligatorio" ng-show="errores.horai">{{errores.horai}}</small>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errores.horas}">
+                <label class="label_form">Hora Salida</label>
+                <select id="txthoras" name="txthoras" class="form-control" data-native-menu="false" data-theme="a"
+                    required="required" ng-model="obj.horas">
+                    <!--ng-change="loadMesas()"-->
+                    <option value="">Seleccionar...</option>
+                    <option value="12:00:00">12:00 PM</option>
+                    <option value="13:00:00">1:00 PM</option>
+                    <option value="14:00:00">2:00 PM</option>
+                    <option value="15:00:00">3:00 PM</option>
+                    <option value="16:00:00">4:00 PM</option>
+                    <option value="17:00:00">5:00 PM</option>
+                    <option value="18:00:00">6:00 PM</option>
+                    <option value="19:00:00">7:00 PM</option>
+                    <option value="20:00:00">8:00 PM</option>
+                    <option value="21:00:00">9:00 PM</option>
+                </select>
+                <small class="form-text text-muted obligatorio" ng-show="errores.horas">{{errores.horas}}</small>
+            </div>
+            <div class="form-group" ng-class="{'obligatorio': errores.personas}">
+                <label class="label_form control-label">Número Personas</label>
+                <input type="number" class="form-control" name="txtnumper" id="txtnumper" class="form-control" ng-model="obj.personas">
+                <small class="form-text text-muted obligatorio" ng-show="errores.personas">{{errores.personas}}</small>
+            </div>
+            <div class="form-group" ng-class="{'has-error': errores.menores}">
+                <label class="label_form">Menores de edad</label>
+                <select name="selmenores" id="selmenores" required="required" class="form-control" ng-model="obj.menores"
+                    data-native-menu="false" data-theme="a">
+                    <option value="" selected="selected">Seleccionar....</option>
+                    <option value="1">Si</option>
+                    <option value="0">No</option>
+                </select>
+                <small class="form-text text-muted obligatorio" ng-show="errores.menores">{{errores.menores}}</small>
+            </div>
+            <div class="form-group" ng-class="{'obligatorio': errores.presupuesto}">
+                <label class="label_form control-label">Presupuesto $</label>
+                <input type="number" class="form-control" name="txtpresupuesto" id="txtpresupuesto" class="form-control"
+                    ng-model="obj.presupuesto">
+                <small class="form-text text-muted obligatorio" ng-show="errores.presupuesto">{{errores.presupuesto}}</small>
+            </div>
+
+            <div class="form-group" ng-class="{'obligatorio': errores.detalle}">
+                <label class="label_form control-label">Detalle del servicio</label>
+                <textarea type="number" class="form-control" style="height: 200px;" name="txtdetalle" id="txtdetalle" class="form-control"
+                    ng-model="obj.detalle" cols="20"></textarea>
+                <small class="form-text text-muted obligatorio" ng-show="errores.detalle">{{errores.detalle}}</small>
+            </div>
+            <div class="form-group" ng-class="{'obligatorio': errores.total}">
+                <label class="label_form control-label">Total $</label>
+                <input type="number" class="form-control" name="txttotal" id="txttotal" class="form-control" ng-model="obj.total">
+                <small class="form-text text-muted obligatorio" ng-show="errores.total">{{errores.total}}</small>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-lg-12">
+        <hr>
+        <a type="button" ng-click="guardarCotizacion()" class="btnporto">Guardar</a>
+        <a type="button" ng-click="cancelar()" class="btnporto">Cancelar</a>
+    </div>
+</div>
