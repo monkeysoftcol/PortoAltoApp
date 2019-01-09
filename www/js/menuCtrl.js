@@ -8,9 +8,9 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
                   //console.log(direction);
                   if (direction) {
                         if (direction == 'right') {
-                              $( "#btnPreview" ).click();
+                              $("#btnPreview").click();
                         } else {
-                              $( "#btnNext" ).click();
+                              $("#btnNext").click();
                         }
                   }
 
@@ -63,9 +63,38 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
 
       }
 
+      //sevicios nuevos
+      $scope.listMenu = [];
+      $scope.viewDetail = false;
+      $scope.base = "http://www.portoalto.com.co/servicios/v1/";
+      $scope.titulo;
+      
+      $scope.loadMenuCategoria = function (categoria, texto) {
+            $scope.titulo = texto;
+            $('#dlgLoading').modal();
+
+            $http.get($scope.base + "menu/" + categoria, {}
+            ).success(function (data) {
+                  console.log(JSON.stringify(data));
+                  $('#dlgLoading').modal('hide');
+                  if (data.status === 'SUCCESS') {
+                        $scope.listMenu = data.object;
+                        $scope.viewDetail = true;
+                  } else {
+                        $('#msgEsperaM').html(data.message);
+                        $('#dlgEsperaM').modal();
+                  }
+                  
+            }).error(function (data, status, headers, config) {
+                  $('#dlgEsperaM').modal('hide');
+                  $('#msgEsperaM').html("Los servicios web no están disponibes");
+                  $('#dlgEsperaM').modal();
+            });
+      }
+
       $scope.atras = function () {
             $("html, body").animate({ scrollTop: 0 }, 600);
-            $scope.showList = true;
+            $scope.viewDetail = false;
       }
 
       //carousel

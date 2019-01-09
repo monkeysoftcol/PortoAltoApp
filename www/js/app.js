@@ -7,7 +7,7 @@
  }*/
 
 // Declare app level module which depends on filters, and services
-var module = angular.module("Pasoporto",["ngRoute","ngStorage","ja.qr","ngCordova"]).
+var module = angular.module("Pasoporto",["ngRoute","ngStorage","ja.qr","ngCordova","ngSanitize"]).
         config(["$routeProvider",function(a){
         
         a.when('/home', {templateUrl: 'partials/home.html', controller: 'homeCtrl'});
