@@ -1,4 +1,4 @@
-<div id="test" class="carousel slide" ng-show="viewDetail">
+<div id="test" class="carousel slide"><!--ng-show="viewDetail"-->
     <div class="row">
         <div class="col-md-6 text-center">
             <h2 style="color:#e8e4c4" class="text-center">{{titulo}}</h2>
@@ -17,7 +17,7 @@
 
     <!-- The slideshow -->
 
-    <div id="menuPorto" class="carousel-inner text-center">
+    <!--<div id="menuPorto" class="carousel-inner text-center">
         <div ng-repeat="menu in listMenu">
             <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;"
                 ng-class="{'active': isSet(menu.index)}" ng-show="isSet(menu.index)">
@@ -29,40 +29,46 @@
             </div>
         </div>
 
-    </div>
-
-    <!--<div id="menuPorto" class="carousel-inner text-center">
-        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;"
-            ng-class="{'active': isSet(1)}" ng-show="isSet(1)">
-            <p style="color:#e8e4c4"><strong>Porto Negra</strong></p>
-            <img class="cepeda" src="img/menus/1.png" alt="Los Angeles" width="210">
-            <p style="color:#e8e4c4">1Lt <strong>$16.900</strong></p>
-            <p style="color:#e8e4c4">20oz <strong>$12.500</strong></p>
-            <p style="color:#e8e4c4">Jarra <strong>$34.000</strong></p>
-            <p style="color:#e8e4c4">Cerveza compuesta por trigo, agua, otras cosas que el cliente quiera poner en la
-                descripción del menú. este es un texto de ejemplo</p>
-        </div>
-        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;"
-            ng-class="{'active': isSet(2)}" ng-show="isSet(2)">
-            <p style="color:#e8e4c4"><strong>Porto Negra</strong></p>
-            <img src="img/menus/2.jpg" alt="Los Angeles" width="210">
-            <p style="color:#e8e4c4">1Lt <strong>$16.900</strong></p>
-            <p style="color:#e8e4c4">20oz <strong>$12.500</strong></p>
-            <p style="color:#e8e4c4">Jarra <strong>$34.000</strong></p>
-            <p style="color:#e8e4c4">Cerveza compuesta por trigo, agua, otras cosas que el cliente quiera poner en la
-                descripción del menú. este es un texto de ejemplo</p>
-        </div>
-        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;"
-            ng-class="{'active': isSet(3)}" ng-show="isSet(3)">
-            <p style="color:#e8e4c4"><strong>Porto Negra</strong></p>
-            <img src="img/menus/3.jpg" alt="Los Angeles" width="210">
-            <p style="color:#e8e4c4">1Lt <strong>$16.900</strong></p>
-            <p style="color:#e8e4c4">20oz <strong>$12.500</strong></p>
-            <p style="color:#e8e4c4">Jarra <strong>$34.000</strong></p>
-            <p style="color:#e8e4c4">Cerveza compuesta por trigo, agua, otras cosas que el cliente quiera poner en la
-                descripción del menú. este es un texto de ejemplo</p>
-        </div>
     </div>-->
+
+    <div id="menuPorto" class="carousel-inner text-center">
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(1)}" ng-show="isSet(1)">
+            <img class="cepeda" src="img/carta/1.jpg" alt="Los Angeles" width="100%" height="100%">
+        </div>
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(2)}" ng-show="isSet(2)">
+            <img src="img/carta/2.jpg" alt="Los Angeles" width="100%">
+        </div>
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(3)}" ng-show="isSet(3)">
+            <img src="img/carta/3.jpg" alt="Los Angeles" width="100%">
+        </div>
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(4)}" ng-show="isSet(4)">
+            <img src="img/carta/4.jpg" alt="Los Angeles" width="100%">
+        </div>
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(5)}" ng-show="isSet(5)">
+            <img src="img/carta/5.jpg" alt="Los Angeles" width="100%">
+        </div>
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(6)}" ng-show="isSet(6)">
+            <img src="img/carta/6.jpg" alt="Los Angeles" width="100%">
+        </div>
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(7)}" ng-show="isSet(7)">
+            <img src="img/carta/7.jpg" alt="Los Angeles" width="100%">
+        </div>
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(8)}" ng-show="isSet(8)">
+            <img src="img/carta/8.jpg" alt="Los Angeles" width="100%">
+        </div>
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(9)}" ng-show="isSet(9)">
+            <img src="img/carta/9.jpg" alt="Los Angeles" width="100%">
+        </div>
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(10)}" ng-show="isSet(10)">
+            <img src="img/carta/10.jpg" alt="Los Angeles" width="100%">
+        </div>
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(11)}" ng-show="isSet(11)">
+            <img src="img/carta/11.jpg" alt="Los Angeles" width="100%">
+        </div>
+        <div class="carousel-item" style="background: rgba(213, 219, 219, 0.3); border-radius: 10px 10px 10px 10px;" ng-class="{'active': isSet(12)}" ng-show="isSet(12)">
+            <img src="img/carta/12.jpg" alt="Los Angeles" width="100%">
+        </div>
+    </div>
 
     <!-- Left and right controls -->
     <a id="btnPreview" class="carousel-control-prev" ng-click="slideIzquierda()">
@@ -73,12 +79,16 @@
     </a>
 
 </div>
+
+<!--
 <div class="row" ng-show="!viewDetail">
     <div class="col-lg-12 text-center">
         <h3 class="titulo">Menú</h3>
         <hr>
     </div>
 </div>
+
+
 <div class="row" ng-show="!viewDetail">
     <!--<div class="col-lg-12 text-center">
         <a ng-click="showMenu(1)" data-transition="flip"><img style="width: 80%" src="img/entradas.png"></a>
@@ -93,7 +103,7 @@
         <a ng-click="showMenu(10)" data-transition="flip"><img style="width: 80%" src="img/cocteles.png"></a>
         <a ng-click="showMenu(11)" data-transition="flip"><img style="width: 80%" src="img/shots.png"></a>
     </div>
-    -->
+    --
     <div class="col-lg-12 text-center">
         <a ng-click="loadMenuCategoria(1,'Entradas')" data-transition="flip"><img style="width: 80%" src="img/entradas.png"></a>
         <a ng-click="loadMenuCategoria(2,'Platos Fuertes')" data-transition="flip"><img style="width: 80%" src="img/platosfuertes.png"></a>
@@ -116,3 +126,4 @@
         <a type="button" ng-click="atras()" class="btnporto">Atrás</a>
     </div>
 </div>
+-->

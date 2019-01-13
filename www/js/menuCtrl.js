@@ -68,7 +68,7 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
       $scope.viewDetail = false;
       $scope.base = "http://www.portoalto.com.co/servicios/v1/";
       $scope.titulo;
-      $scope.totalRegistros;
+      $scope.totalRegistros=12;
 
       $scope.loadMenuCategoria = function (categoria,texto) {
             $http.get($scope.base + "menu/count/" + categoria, {}
@@ -116,6 +116,7 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
       $scope.atras = function () {
             $("html, body").animate({ scrollTop: 0 }, 600);
             $scope.viewDetail = false;
+            $scope.showList = true;
       }
 
       //carousel
