@@ -15,7 +15,7 @@ function baseController($scope, $localStorage) {
                 { "url": "#/about", "texto": "Acerca de porto alto", "img": "img/menui/acerca.png" },
                 { "url": "#/home", "texto": "Buscar", "img": "img/menui/lupa.png" },
                 { "url": "#/menu", "texto": "Nuestra Carta", "img": "img/menui/carta.png" },
-                { "url": "#/menud", "texto": "Nuestra Carta Futbolera", "img": "img/menui/cartaf.png" },
+                //{ "url": "#/menud", "texto": "Nuestra Carta Futbolera", "img": "img/menui/cartaf.png" },
                 { "url": "#/eventos", "texto": "Eventos", "img": "img/menui/eventos.png" },
                 { "url": "#/promo", "texto": "Promociones", "img": "img/menui/promocion.png" }
 

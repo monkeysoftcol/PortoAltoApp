@@ -67,7 +67,7 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
       $scope.listMenu = [];
       $scope.viewDetail = false;
       $scope.base = "http://www.portoalto.com.co/servicios/v1/";
-      $scope.titulo;
+      $scope.titulo="Nuestra Carta";
       $scope.totalRegistros=12;
 
       $scope.loadMenuCategoria = function (categoria,texto) {
