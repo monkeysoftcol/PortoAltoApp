@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="co.com.portoalto" version="1.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="co.com.portoalto" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>PortoAlto</name>
     <description>
         Porto AltoApp
@@ -32,8 +32,11 @@
             </array>
         </config-file>
         <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
-            <string>Required for Scanning</string>
+            <string>Required for photo library</string>
         </config-file>
+        <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge" overwrite="true">
+          <string>Required for take photo</string>
+        </edit-config>
         <icon height="57" platform="ios" src="res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="res/icon/ios/icon@2x.png" width="114" />
         <icon height="40" platform="ios" src="res/icon/ios/icon-40.png" width="40" />
