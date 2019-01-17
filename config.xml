@@ -26,14 +26,7 @@
         <splash density="port-xhdpi" src="res/screen/android/drawable-port-xhdpi-screen.png" />
     </platform>
     <platform name="ios">
-        <!--<config-file parent="UISupportedExternalAccessoryProtocols" target="*-Info.plist">
-            <array>
-                <string>co.com.portoalto</string>
-            </array>
-        </config-file>-->
-        <<!--config-file parent="NSCameraUsageDescription" target="*-Info.plist">
-            <string>Required for Scanning</string>
-        </config-file>-->
+        
         <icon height="57" platform="ios" src="res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="res/icon/ios/icon@2x.png" width="114" />
         <icon height="40" platform="ios" src="res/icon/ios/icon-40.png" width="40" />
