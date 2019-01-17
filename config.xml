@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="co.com.portoalto" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="co.com.portoalto" version="1.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>PortoAlto</name>
     <description>
         Porto AltoApp
@@ -26,7 +26,14 @@
         <splash density="port-xhdpi" src="res/screen/android/drawable-port-xhdpi-screen.png" />
     </platform>
     <platform name="ios">
-        
+        <config-file parent="UISupportedExternalAccessoryProtocols" target="*-Info.plist">
+            <array>
+                <string>co.com.portoalto</string>
+            </array>
+        </config-file>
+        <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
+            <string>Required for Scanning</string>
+        </config-file>
         <icon height="57" platform="ios" src="res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="res/icon/ios/icon@2x.png" width="114" />
         <icon height="40" platform="ios" src="res/icon/ios/icon-40.png" width="40" />
@@ -114,7 +121,7 @@
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <plugin name="phonegap-plugin-barcodescanner" spec="https://github.com/jrontend/phonegap-plugin-barcodescanner">
-        <param name="CAMERA_USAGE_DESCRIPTION" value="Scan QR-Codes" />
+    <param name="CAMERA_USAGE_DESCRIPTION" value="Scan QR" />
     </plugin>
     <engine name="browser" spec="^5.0.4" />
     <engine name="ios" spec="^4.5.5" />
