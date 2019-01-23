@@ -1,7 +1,8 @@
-module.controller('promoCtrl', ['$scope', '$http', function ($scope, $http) {
+module.controller('promoCtrl', ['$scope', '$http','$localStorage', function ($scope, $http,$localStorage) {
 
     baseController($scope, $localStorage);
     $scope.myFunction(false);
+
     $("html, body").animate({ scrollTop: 0 }, 600);
     
     $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=14";

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="co.com.portoalto" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="co.com.portoalto" version="1.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>PortoAlto</name>
     <description>
         Porto AltoApp
@@ -26,11 +26,6 @@
         <splash density="port-xhdpi" src="res/screen/android/drawable-port-xhdpi-screen.png" />
     </platform>
     <platform name="ios">
-        <config-file parent="UISupportedExternalAccessoryProtocols" target="*-Info.plist">
-            <array>
-                <string>co.com.portoalto</string>
-            </array>
-        </config-file>
         <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
             <string>Required for photo library</string>
         </config-file>

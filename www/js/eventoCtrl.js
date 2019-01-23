@@ -1,4 +1,4 @@
-module.controller('eventoCtrl', ['$scope', '$http', function ($scope, $http) {
+module.controller('eventoCtrl', ['$scope', '$http','$localStorage', function ($scope, $http,$localStorage) {
     
     $("html, body").animate({ scrollTop: 0 }, 600);
     baseController($scope, $localStorage);
