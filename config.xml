@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="co.com.portoalto" version="1.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="co.com.portoalto" version="1.0.8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>PortoAlto</name>
     <description>
         Porto AltoApp
@@ -29,8 +29,8 @@
         <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
             <string>Required for photo library</string>
         </config-file>
-        <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge" overwrite="true">
-          <string>Required for take photo</string>
+        <edit-config file="*-Info.plist" mode="merge" overwrite="true" target="NSCameraUsageDescription">
+            <string>Required for take photo</string>
         </edit-config>
         <icon height="57" platform="ios" src="res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="res/icon/ios/icon@2x.png" width="114" />
@@ -113,13 +113,13 @@
     </platform>
     <plugin name="cordova-plugin-camera" spec="^4.0.3">
         <param name="CAMERA_USAGE_DESCRIPTION" value="This app needs to access your camera" />
-	    <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="This app needs to access your photo library" /> 
+        <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="This app needs to access your photo library" />
     </plugin>
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <plugin name="phonegap-plugin-barcodescanner" spec="https://github.com/jrontend/phonegap-plugin-barcodescanner">
-    <param name="CAMERA_USAGE_DESCRIPTION" value="Scan QR" />
+        <param name="CAMERA_USAGE_DESCRIPTION" value="Scan QR" />
     </plugin>
     <engine name="browser" spec="^5.0.4" />
     <engine name="ios" spec="^4.5.5" />

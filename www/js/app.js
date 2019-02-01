@@ -24,6 +24,8 @@ var module = angular.module("Pasoporto",["ngRoute","ngStorage","ja.qr","ngCordov
         a.when('/pasoporto', {templateUrl: 'partials/pasoporto.html', controller: 'pasoportoCtrl'});
         a.when('/solpassoporto', {templateUrl: 'partials/solpasoporto.html', controller: 'solPasoCtrl'});
 
+        a.when('/dev', {templateUrl: 'partials/dev.html', controller: 'solPasoCtrl'});
+
         a.when('/salir', {templateUrl: 'partials/home.html', controller: 'salirCtrl'});
 
         a.otherwise({redirectTo:"/home"});
