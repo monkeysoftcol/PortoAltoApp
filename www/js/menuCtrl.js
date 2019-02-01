@@ -2,7 +2,7 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
 
       baseController($scope, $localStorage);
       $scope.myFunction(false);
-
+      $("html, body").animate({ scrollTop: 0 }, 600);
       $("#test").swipe({
             swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
                   //console.log(direction);
@@ -18,6 +18,8 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
             //Default is 75px, set to 0 for demo so any distance triggers swipe
             threshold: 0
       });
+
+      $('#mybook').booklet();
 
 
       console.log("menu cargado!!!!");

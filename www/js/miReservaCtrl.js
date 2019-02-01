@@ -6,9 +6,9 @@ module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function
     $("html, body").animate({ scrollTop: 0 }, 600);
     $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=5";
     $scope.reserva;
-    $("html, body").animate({ scrollTop: 0 }, 600);
+    
     $scope.estado = "";
-    $scope.reserva;
+   
 
     $scope.consultarReserva = function(){
         $http.get($scope.url + "&cedula=" + $localStorage.cedula, {}
