@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h5 class="titulo">Mis reservas</h5>
+        <hr>
+    </div>
+</div>
+<div class="row" style="padding:15px;">
+    
+    <div ng-repeat="reserva in reservas" style="padding: 10px;">
+        <div class="card" style="width: 100%; background: #e4e4e4;" >
+            
+            <div class="card-body" style="background: #e4e4e4;">
+                <h5 class="card-title"> <img class="card-img-top" src="img/oporto.png" alt="Card image cap" style="width: 50px; height: 50px;"> {{reserva.motivo}}</h5>
+                <p class="card-text" style="font-size: 12px">{{reserva.decoracion!=null?reserva.decoracion:'Sin decoraci&oacute;n'}}</p>
+                <footer class="blockquote-footer" style="font-size: 10px"><cite title="Source Title">{{reserva.estado}}</cite></footer>
+            </div>
+            <ul class="list-group list-group-flush" style="font-size: 11px;">
+                <li class="list-group-item" style="background: #e4e4e4;">Fecha reserva  : {{reserva.fechar}}</li>
+                <li class="list-group-item" style="background: #e4e4e4;">Fecha creación : {{reserva.fechac}}</li>
+                <li class="list-group-item" style="background: #e4e4e4;">Nro. personas  : {{reserva.npersonas}}</li>
+                <li class="list-group-item" style="background: #e4e4e4;">Valor x persona  : ${{reserva.unitario!=null?reserva.unitario:'0'}}</li>
+                <li class="list-group-item" style="background: #e4e4e4;">Valor total  : ${{reserva.total!=null?reserva.total:'0'}}</li>
+                <li class="list-group-item" style="background: #e4e4e4;">Valor descuento  : ${{reserva.descuento}}</li>
+                <li class="list-group-item" style="background: #e4e4e4;">Total pago  : ${{reserva.totald}}</li>
+            </ul>
+        </div>
+    </div>
+
+</div>

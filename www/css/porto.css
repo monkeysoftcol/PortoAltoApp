@@ -112,3 +112,15 @@ body {
     height: 10em;
     width: 500px;
  }
+ 
+ .modal-header {
+    height: 50px !important;
+}
+
+.modal-header .close {
+    margin: -1.5rem -1rem -1rem auto !important;
+}
+
+.list-group-item {
+    padding: 0.45rem 1.20rem !important;
+}

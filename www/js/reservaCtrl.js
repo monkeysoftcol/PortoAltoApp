@@ -20,6 +20,9 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
         $scope.listaDecoreaciones = [];
         $scope.decoracionSelected;
         $scope.acepta = false;
+        
+        
+        $scope.infoUser={};
 
         $scope.test = function () {
             $http.get("http://www.movil.portoalto.com.co/webservice.php?opc=16", {}
@@ -162,6 +165,36 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
             window.location.href = './portoalto.html#/home';
         };
 
+
+        $scope.sentMail = function () {
+            $scope.datosMail = {};
+            $scope.datosMail.nombre = $scope.datosFormulario.nombre;
+            $scope.datosMail.email = $scope.datosFormulario.email;
+            $scope.datosMail.mensaje = "Se registró de forma exitosa la cotización, a continuación un resumen de su pedido : \n\
+                                        Nombre de la empresa : " + $scope.datosFormulario.nombre + "\n\
+                                        Ciudad : " + $scope.datosFormulario.ciudad + "\n\
+                                        Localidad : " + $scope.datosFormulario.localidad + "\n\
+                                        Fecha del evento : " + $scope.datosFormulario.fecha + "\n\
+                                        Hora de ingreso : " + $scope.datosFormulario.horaIngreso.descripcion + "\n\
+                                        Hora de salida : " + $scope.datosFormulario.horaSalida.descripcion + "\n\
+                                        Número de personas : " + $scope.datosFormulario.numeroPersonas + "\n\
+                                        Detalle del evento : " + $scope.datosFormulario.detalle + "\n\
+                                        Total : " + $scope.datosFormulario.total;
+            $http.post('http://portoalto.com.co/servicios/v1/sentMail', $scope.datosMail)
+                    .success(function (data, status, header, config) {
+                        if (data.status === 'SUCCESS') {
+                            $scope.datosFormulario = {};
+                            $scope.datos = {};
+                            $('#dlgConfContizacion').modal('hide');
+                            $('#dlgSucces').modal({backdrop: 'static', keyboard: false});
+                        } else {
+                            $('#dlgError').modal({backdrop: 'static', keyboard: false});
+                            $scope.message = data.message;
+                        }
+                    }).error(function (data, status, header, config) {
+                alert('Error al consultar la información');
+            });
+        };
 
 
     }]);

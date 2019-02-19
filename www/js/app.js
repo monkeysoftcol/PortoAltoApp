@@ -18,6 +18,8 @@ var module = angular.module("Pasoporto",["ngRoute","ngStorage","ja.qr","ngCordov
         a.when('/about', {templateUrl: 'partials/about.html', controller: 'aboutCtrl'});
         a.when('/reserva', {templateUrl: 'partials/reserva.html', controller: 'reservaCtrl'});
         a.when('/mireserva', {templateUrl: 'partials/mireserva.html', controller: 'miReservaCtrl'});
+        a.when('/reservas', {templateUrl: 'partials/reservas.html', controller: 'reservasCtrl'});
+        
         a.when('/calificar', {templateUrl: 'partials/calificar.html', controller: 'calificarCtrl'});
         //nuevo
         a.when('/mipasoporto', {templateUrl: 'partials/mipasoporto.html', controller: 'miPasoportoCtrl'});
