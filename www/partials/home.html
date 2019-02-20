@@ -4,8 +4,19 @@
     </div>
    
 </div>
-<div class="row">
 <hr>
-    <div id="div_resultado" class="texto_div"></div>
+<div class="col-md-6 text-center" style="padding:15px;">
+    <div class="card-deck">
+        <div class="card" style="width: 20rem; background: rgba(0,0,0,0.5);" ng-repeat="evento in promociones">
+            <div class="text-center">
+                <img ng-show="{{evento.imagen}}"  src="data:image/jpeg;base64, {{evento.imagen}}" width="100" height="100"/>
+                <img ng-show="{{!evento.imagen}}" src="img/nodisponible.jpg" alt="No disponible" width="100" height="100"/>
+            </div>
+            <div class="card-body" style="background-color: #343a40 !important; color: #e8e4c4 !important; font-size: 12px">
+                <h5 class="card-title">{{evento.nombre}}</h5>
+                <p class="card-text">{{evento.descripcion}}</p>
+            </div>
+        </div>
+    </div>
 
 </div>

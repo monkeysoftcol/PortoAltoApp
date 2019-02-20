@@ -4,13 +4,15 @@
         <hr>
     </div>
 </div>
-<div class="row" style="padding:15px;">
-    
-    <div ng-repeat="reserva in reservas" style="padding: 10px;">
-        <div class="card" style="width: 100%; background: #e4e4e4;" >
-            
+<div class="col-md-6 text-center" style="padding:15px;">
+
+    <div class="card-deck">
+        <div class="card" style="width: 100%;background: rgba(0,0,0,0.5);" ng-repeat="reserva in reservas">
+            <div class="text-center">
+                <img class="card-img-top" src="img/oporto.png" alt="Card image cap" style="width: 50px; height: 50px;">
+            </div>
             <div class="card-body" style="background: #e4e4e4;">
-                <h5 class="card-title"> <img class="card-img-top" src="img/oporto.png" alt="Card image cap" style="width: 50px; height: 50px;"> {{reserva.motivo}}</h5>
+                <h5 class="card-title"> {{reserva.motivo}}</h5>
                 <p class="card-text" style="font-size: 12px">{{reserva.decoracion!=null?reserva.decoracion:'Sin decoraci&oacute;n'}}</p>
                 <footer class="blockquote-footer" style="font-size: 10px"><cite title="Source Title">{{reserva.estado}}</cite></footer>
             </div>
