@@ -4,7 +4,7 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', '$location
         baseController($scope, $localStorage);
         $scope.myFunction(false);
 
-        if (sessionStorage.login && sessionStorage.login=="false") {
+        if (sessionStorage.login !== "true" && sessionStorage.portero == "false") {
             $('#msgEsperaM').html("Para realizar reservas debe ingresar al sistema.");
             $('#dlgEsperaM').modal();
             window.location.href = './index.html#/vip';
