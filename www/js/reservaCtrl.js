@@ -1,9 +1,18 @@
-module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
+module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', '$location', function ($scope, $http, $localStorage, $location) {
 
         $("html, body").animate({scrollTop: 0}, 600);
         baseController($scope, $localStorage);
-
+        console.log("****>>>" + $location.path());
         $scope.myFunction(false);
+
+
+        if (sessionStorage.login=="false") {
+            $('#msgEsperaM').html("Para realizar reservas debes iniciar sesión");
+            $('#dlgEsperaM').modal();
+            window.location.href = './index.html#/vip';
+            return;
+        }
+
 
         console.log("reserva....");
         $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=3";//decoración
@@ -20,9 +29,8 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
         $scope.listaDecoreaciones = [];
         $scope.decoracionSelected;
         $scope.acepta = false;
-        
-        
-        $scope.infoUser={};
+
+        $scope.infoUser = {};
 
         $scope.test = function () {
             $http.get("http://www.movil.portoalto.com.co/webservice.php?opc=16", {}
@@ -54,7 +62,15 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
                 $('#dlgEsperaM').modal();
             });
         }
-        $scope.loadpromociones();
+
+
+        if (($localStorage.login == true || sessionStorage.login == true) && (!$localStorage.portero && !sessionStorage.portero)) {
+            $('#msgEsperaM').html("Para realizar una reserva debes iniciar sesión");
+            $('#dlgEsperaM').modal();
+            window.location.href = './index.html#/vip';
+        } else {
+            $scope.loadpromociones();
+        }
 
         $scope.loadMesas = function () {
             if ($scope.obj.fecha && $scope.obj.hora) {
@@ -198,3 +214,4 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', function (
 
 
     }]);
+

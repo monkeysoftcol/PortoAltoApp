@@ -8,31 +8,42 @@ module.controller('miPasoportoCtrl', ['$scope', '$http', '$localStorage', functi
         $scope.object.cedula = $localStorage.cedula;
         $scope.string = String($localStorage.cedula);
 
+        $scope.loadInfo = function () {
+            $scope.string = String("CC" + sessionStorage.cedula + "|" + sessionStorage.nombres + "| Email=" + sessionStorage.email);
+            $scope.object.nombres = $localStorage.nombres;
+            if (sessionStorage.nombres) {
+                $scope.object.nombres = sessionStorage.nombres;
+            }
+            /*$http.post($scope.url, $scope.object).success(function (data) {
+             console.log(data);
+             if (data.status == 'SUCCESS') {
+             $scope.string = String("CC" + data.object.nodocumento + "|" + data.object.nombres + " " + data.object.apellidos + "| Email=" + data.object.email);
+             $scope.object.nombres = data.object.nombres + " " + data.object.apellidos;
+             } else {
+             $('#msgEsperaM').html(data.message);
+             $('#dlgEsperaM').modal();
+             }
+             $('#dlgEsperaM').modal('hide');
+             }).error(function (data) {
+             $('#dlgEsperaM').modal('hide');
+             $('#msgEsperaM').html("Los servicios web no están disponibes");
+             $('#dlgEsperaM').modal();
+             });*/
+        }
+
+        if (sessionStorage.login == "true" && sessionStorage.portero == "false") {
+            $scope.loadInfo();
+        } else {
+            $('#msgEsperaM').html("Para ver tu pasoporto debes iniciar sesión");
+            $('#dlgEsperaM').modal();
+            window.location.href = './index.html#/vip';
+        }
         if (!$localStorage.cedula) {
             console.log("No registro localstorage!!");
-            $scope.object.cedula = $window.localStorage.getItem("cedula");
+            $scope.object.cedula = $localStorage.cedula;
         }
-        $scope.loadInfo = function () {
-            $scope.string = String("CC" + $localStorage.cedula + "|" + $localStorage.nombres + "| Email=" + $localStorage.email);
-            $scope.object.nombres = $localStorage.nombres;
 
-            /*$http.post($scope.url, $scope.object).success(function (data) {
-                console.log(data);
-                if (data.status == 'SUCCESS') {
-                    $scope.string = String("CC" + data.object.nodocumento + "|" + data.object.nombres + " " + data.object.apellidos + "| Email=" + data.object.email);
-                    $scope.object.nombres = data.object.nombres + " " + data.object.apellidos;
-                } else {
-                    $('#msgEsperaM').html(data.message);
-                    $('#dlgEsperaM').modal();
-                }
-                $('#dlgEsperaM').modal('hide');
-            }).error(function (data) {
-                $('#dlgEsperaM').modal('hide');
-                $('#msgEsperaM').html("Los servicios web no están disponibes");
-                $('#dlgEsperaM').modal();
-            });*/
-        }
-        $scope.loadInfo();
+
     }]);
 
 

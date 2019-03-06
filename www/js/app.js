@@ -20,6 +20,12 @@ var module = angular.module("Pasoporto",["ngRoute","ngStorage","ja.qr","ngCordov
         a.when('/mireserva', {templateUrl: 'partials/mireserva.html', controller: 'miReservaCtrl'});
         a.when('/reservas', {templateUrl: 'partials/reservas.html', controller: 'reservasCtrl'});
         
+        a.when('/vip', {templateUrl: 'partials/vip.html', controller: 'vipCtrl'});
+        a.when('/portero', {templateUrl: 'partials/portero/login.html', controller: 'porteroLoginCtrl'});
+        a.when('/validarr', {templateUrl: 'partials/portero/home.html', controller: 'porterohomeCtrl'});
+        a.when('/validarc', {templateUrl: 'partials/portero/reserva.html', controller: 'porteroReservaCtrl'});
+        a.when('/qr', {templateUrl: 'partials/portero/cliente.html', controller: 'porteroQrCtrl'});
+        
         a.when('/calificar', {templateUrl: 'partials/calificar.html', controller: 'calificarCtrl'});
         //nuevo
         a.when('/mipasoporto', {templateUrl: 'partials/mipasoporto.html', controller: 'miPasoportoCtrl'});
@@ -27,7 +33,6 @@ var module = angular.module("Pasoporto",["ngRoute","ngStorage","ja.qr","ngCordov
         a.when('/solpassoporto', {templateUrl: 'partials/solpasoporto.html', controller: 'solPasoCtrl'});
 
         a.when('/dev', {templateUrl: 'partials/dev.html', controller: 'solPasoCtrl'});
-
         a.when('/salir', {templateUrl: 'partials/home.html', controller: 'salirCtrl'});
 
         a.otherwise({redirectTo:"/home"});

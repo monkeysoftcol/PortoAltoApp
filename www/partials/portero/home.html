@@ -1,62 +1,35 @@
 <div class="row">
     <div class="col-lg-12 text-center">
-        <h3 class="titulo">Bienvenido</h3>
+        <h3 class="titulo">Portero</h3>
         <hr>
     </div>
 </div>
-<div class="row">
 
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8 filter">
 
-        <div class="row d-flex justify-content-center">
-            <div id="carbonads" style="padding-top: 10px"><span><span class="d-flex justify-content-center"><br>
-                <a ng-click="scanRQ()"> <img src="img/qrscann.png" alt="" height="130" width="130" style="max-width: 130px;"></a>
+<div class="col-md-6 text-center" style="padding:15px;">
+    <div class="card-deck">
+        <div class="card" style="width: 20rem; background: rgba(0,0,0,0.5);">
+            <div class="text-center">
+                 <a ng-click="scanRQ()"> <img src="img/qrscann.png" alt="" height="130" width="130" style="max-width: 130px;"></a>
             </div>
-        </div>
-        <div class="text-center texto_div">
-            <p>
-                Verificar Reserva QR
-            </p>
+            <div class="card-body" style="background-color: #343a40 !important;    color: #e8e4c4 !important;">
+                <h5 class="card-title">Verificar Reserva QR</h5>
+                <p class="card-text">Para validar una reserva, escanee el código QR presentado por el cliente</p>
+            </div>
         </div>
     </div>
-    <div class="col-lg-2"></div>
 </div>
-<div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8 filter">
 
-        <div class="row d-flex justify-content-center">
-            <div id="carbonads"><span><span class="d-flex justify-content-center">
-                        <a href="#/reserva"><br><img src="img/userscann.png" alt="" height="130" width="130"></a>
+<div class="col-md-6 text-center" style="padding:15px;">
+    <div class="card-deck">
+        <div class="card" style="width: 20rem; background: rgba(0,0,0,0.5);">
+            <div class="text-center">
+                <a href="#/validarc"><br><img src="img/userscann.png" alt="" height="130" width="130"></a>
             </div>
-        </div>
-        <div class="text-center texto_div">
-            <p>
-                Verificar por Cédula
-            </p>
+            <div class="card-body" style="background-color: #343a40 !important;    color: #e8e4c4 !important;">
+                <h5 class="card-title">Verificar Cliente</h5>
+                <p class="card-text">Para validar un cliente, consulte por el número de identificación</p>
+            </div>
         </div>
     </div>
-    <div class="col-lg-2"></div>
-</div>
-<!--<div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8 filter">
-    
-            <div class="row d-flex justify-content-center">
-                <div id="carbonads"><span><span class="d-flex justify-content-center">
-                            <a href="#/cotizar"><br><img src="img/cotizar.png" alt="" height="130" width="130"></a>
-                </div>
-            </div>
-            <div class="text-center texto_div">
-                <p>
-                    Realizar cotización
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-2"></div>
-    </div>-->
-<div class="col-lg-12" style="font-size: 100%">
-    <hr>
-    <a type="button" ng-click="cancelar()" class="btnportologin">Salir</a>
 </div>
