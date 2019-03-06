@@ -5,8 +5,8 @@ module.controller('miPasoportoCtrl', ['$scope', '$http', '$localStorage', functi
         $("html, body").animate({scrollTop: 0}, 600);
         $scope.url = "http://www.movil.portoalto.com.co/api/v1/infoUser";
         $scope.object = {};
-        $scope.object.cedula = $localStorage.cedula;
-        $scope.string = String($localStorage.cedula);
+        $scope.object.cedula = $localStorage.cedula!=null?$localStorage.cedula:sessionStorage.cedula;
+        $scope.string = String($localStorage.cedula!=null?$localStorage.cedula:sessionStorage.cedula);
 
         $scope.loadInfo = function () {
             $scope.string = String("CC" + sessionStorage.cedula + "|" + sessionStorage.nombres + "| Email=" + sessionStorage.email);
@@ -34,7 +34,7 @@ module.controller('miPasoportoCtrl', ['$scope', '$http', '$localStorage', functi
         if (sessionStorage.login == "true" && sessionStorage.portero == "false") {
             $scope.loadInfo();
         } else {
-            $('#msgEsperaM').html("Para ver tu pasoporto debes iniciar sesión");
+            $('#msgEsperaM').html("Para ver tu pasoporto debes ingresar al sistema");
             $('#dlgEsperaM').modal();
             window.location.href = './index.html#/vip';
         }

@@ -1,5 +1,5 @@
 module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
-    window.open = cordova.InAppBrowser.open;
+    //window.open = cordova.InAppBrowser.open;
     baseController($scope, $localStorage);
     $scope.myFunction(false);
 
@@ -7,11 +7,12 @@ module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function
     $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=5";
     $scope.reserva;
     
+    $scope.cedula =  $localStorage.cedula!=null?$localStorage.cedula:sessionStorage.cedula;
     $scope.estado = "";
-   
+    $scope.string=$scope.cedula;
 
     $scope.consultarReserva = function(){
-        $http.get($scope.url + "&cedula=" + $localStorage.cedula, {}
+        $http.get($scope.url + "&cedula=" + $scope.cedula, {}
         ).success(function (data) {
             $scope.reserva = data;
             document.getElementById("datosult_reserva").innerHTML = $scope.reserva;

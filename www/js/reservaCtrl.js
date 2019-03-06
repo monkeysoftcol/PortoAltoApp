@@ -2,19 +2,16 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', '$location
 
         $("html, body").animate({scrollTop: 0}, 600);
         baseController($scope, $localStorage);
-        console.log("****>>>" + $location.path());
         $scope.myFunction(false);
 
-
-        if (sessionStorage.login=="false") {
-            $('#msgEsperaM').html("Para realizar reservas debes iniciar sesión");
+        if (sessionStorage.login && sessionStorage.login=="false") {
+            $('#msgEsperaM').html("Para realizar reservas debe ingresar al sistema.");
             $('#dlgEsperaM').modal();
             window.location.href = './index.html#/vip';
             return;
         }
 
 
-        console.log("reserva....");
         $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=3";//decoración
         $scope.urlb = "http://www.movil.portoalto.com.co/webservice.php?opc=4";
         $scope.urlc = "http://www.movil.portoalto.com.co/webservice.php?opc=6";
@@ -65,7 +62,7 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', '$location
 
 
         if (($localStorage.login == true || sessionStorage.login == true) && (!$localStorage.portero && !sessionStorage.portero)) {
-            $('#msgEsperaM').html("Para realizar una reserva debes iniciar sesión");
+            $('#msgEsperaM').html("Para realizar una reserva debes ingresar al sistema");
             $('#dlgEsperaM').modal();
             window.location.href = './index.html#/vip';
         } else {

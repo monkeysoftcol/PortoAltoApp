@@ -183,7 +183,7 @@ module.controller('porterohomeCtrl', ['$scope', '$http', '$localStorage', '$cord
        console.log(sessionStorage.portero);
         
         if (sessionStorage.login=="false") {
-            $('#msgEsperaM').html("Para acceder a las funcionaldiades del portero, tiene que iniciar sesión");
+            $('#msgEsperaM').html("Para acceder a las funcionalidades del portero, debes ingresar al sistema");
             $('#dlgEsperaM').modal();
             window.location.href = './index.html#/portero';
         }
