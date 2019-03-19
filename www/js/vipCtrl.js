@@ -156,30 +156,32 @@ module.controller('vipCtrl', ['$scope', '$http', '$localStorage', function ($sco
                     + "&telefonoreg=" + $scope.obj.celular
                     + "&genero=" + $scope.obj.genero, {}
             ).success(function (data) {
-                if (data == 'Adelante') {
+                //alert(data);
+                if (data === 'Adelante') {
+                    //console.log(">>>>>ok!!!");
                     $('#msgEsperaM').html("Bienvenido!!!!");
 
-                    setTimeout(function () {
+                    /*setTimeout(function () {
                         console.log("Dumiendo...");
-                    }, 2000);
+                    }, 2000);*/
 
                     $localStorage.tipo = "cliente";
                     $localStorage.cedula = $scope.obj.ndoc;
-                    $localStorage.nombres = data.obj.nombres + " " + data.obj.apellidos;
-                    $localStorage.email = data.object.email;
-                    $localStorage.telefono = data.object.telefono;
+                    $localStorage.nombres = $scope.obj.nombres + " " + $scope.obj.apellidos;
+                    $localStorage.email = $scope.obj.email;
+                    $localStorage.telefono = $scope.obj.telefono;
 
-                    sessionStorage.nombres = data.obj.nombres + " " + data.obj.apellidos;
+                    sessionStorage.nombres = $scope.obj.nombres + " " + $scope.obj.apellidos;
                     sessionStorage.cedula = $scope.obj.ndoc;
                     sessionStorage.tipo = "cliente";
-                    sessionStorage.email = data.object.email;
-                    sessionStorage.telefono = data.object.telefono;
+                    sessionStorage.email =  $scope.obj.email;
+                    sessionStorage.telefono =  $scope.obj.telefono;
 
                     $localStorage.login = true;
                     sessionStorage.login = true;
 
-                    $localStorage.portero = true;
-                    sessionStorage.portero = true;
+                    $localStorage.portero = false;
+                    sessionStorage.portero = false;
 
                     window.location.href = './index.html#/mipasoporto';
                 } else {
