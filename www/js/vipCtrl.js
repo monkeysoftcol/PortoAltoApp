@@ -53,7 +53,7 @@ module.controller('vipCtrl', ['$scope', '$http', '$localStorage', function ($sco
 
             $http.get($scope.urlc + "/webservice.php?opc=1&cedula=" + $scope.obj.cedula + "&primerpaellido=" + $scope.obj.apellido + "&callback=?", {}
             ).success(function (data) {
-                console.log(JSON.stringify(data));
+                //console.log(JSON.stringify(data));
                 if (data.codigo == 'OK') {
                     $scope.infoUser();
                     $('#msgEsperaM').html("Bienvenido!!!!");
@@ -165,21 +165,21 @@ module.controller('vipCtrl', ['$scope', '$http', '$localStorage', function ($sco
 
                     $localStorage.tipo = "cliente";
                     $localStorage.cedula = $scope.obj.ndoc;
-                    $localStorage.nombres = data.obj.nombres + " " + data.obj.apellidos;
-                    $localStorage.email = data.object.email;
-                    $localStorage.telefono = data.object.telefono;
+                    $localStorage.nombres = $scope.obj.nombres + " " +$scope.obj.apellidos;
+                    $localStorage.email = $scope.obj.email;
+                    $localStorage.telefono = $scope.obj.celular;
 
-                    sessionStorage.nombres = data.obj.nombres + " " + data.obj.apellidos;
-                    sessionStorage.cedula = $scope.obj.ndoc;
                     sessionStorage.tipo = "cliente";
-                    sessionStorage.email = data.object.email;
-                    sessionStorage.telefono = data.object.telefono;
+                    sessionStorage.cedula = $scope.obj.ndoc;
+                    sessionStorage.nombres = $scope.obj.nombres + " " + $scope.obj.apellidos;
+                    sessionStorage.email = $scope.obj.email;
+                    sessionStorage.telefono = $scope.obj.celular;
 
                     $localStorage.login = true;
                     sessionStorage.login = true;
 
-                    $localStorage.portero = true;
-                    sessionStorage.portero = true;
+                    $localStorage.portero = false;
+                    sessionStorage.portero = false;
 
                     window.location.href = './index.html#/mipasoporto';
                 } else {
@@ -236,6 +236,9 @@ module.controller('vipCtrl', ['$scope', '$http', '$localStorage', function ($sco
                     $localStorage.tipo = "portero";
                     sessionStorage.cedula = $scope.obj.usuario;
                     sessionStorage.tipo = "portero";
+                    
+                    $localStorage.portero = true;
+                    sessionStorage.portero = true;
 
                 } else {
                     $('#msgEsperaM').html("El usuario o la contraseña es incorrecta!!");
