@@ -7,7 +7,7 @@ module.controller('miPasoportoCtrl', ['$scope', '$http', '$localStorage', functi
         $scope.object = {};
         $scope.object.cedula = $localStorage.cedula!=null?$localStorage.cedula:sessionStorage.cedula;
         $scope.string = String($localStorage.cedula!=null?$localStorage.cedula:sessionStorage.cedula);
-
+        $('#dlgLoading').modal('hide');
         $scope.loadInfo = function () {
             $scope.string = String("CC" + sessionStorage.cedula + "|" + sessionStorage.nombres + "| Email=" + sessionStorage.email);
             $scope.object.nombres = $localStorage.nombres;
