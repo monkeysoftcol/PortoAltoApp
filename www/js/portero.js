@@ -130,6 +130,8 @@ module.controller('porteroQrCtrl', ['$scope', '$http', '$localStorage', function
             }, function (error) {
                 $('#msgEsperaM').html("La camara no está disponible");
                 $('#dlgEsperaM').modal();
+            },{
+                orientation : "portrait" 
             });
         }
 
@@ -220,6 +222,8 @@ module.controller('porterohomeCtrl', ['$scope', '$http', '$localStorage', '$cord
                         }, function (err) {
                             $('#msgEsperaM').html("No se puedo leer el código QR");
                             $('#dlgEsperaM').modal();
+                        },{
+                            orientation : "portrait"
                         });
             } catch (err) {
                 $('#msgEsperaM').html("No se puedo leer el código QR");
