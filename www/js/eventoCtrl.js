@@ -9,19 +9,19 @@ module.controller('eventoCtrl', ['$scope', '$http', '$localStorage', function ($
         $scope.listaEventos = [];
 
         $scope.loadinfo = function () {
-            $('#msgEsperaM').html("Consultado...");
-            $('#dlgEsperaM').modal();
+            //$('#msgEsperaM').html("Consultado...");
+            $('#dlgLoading').modal();
             $http.get($scope.url, {}
             ).success(function (data) {
+                $('#dlgLoading').modal('hide');
                 if (data.codigo == 'OK') {
                     $scope.listaEventos = data.object;
                 } else {
-                    $('#msgEsperaM').html("Los servicios web no están disponibes");
+                    $('#msgEsperaM').html(data.mensaje);
                     $('#dlgEsperaM').modal();
                 }
-                $('#dlgEsperaM').modal('hide');
             }).error(function (data, status, headers, config) {
-                $('#dlgEsperaM').modal('hide');
+                $('#dlgLoading').modal('hide');
                 $('#msgEsperaM').html("Los servicios web no están disponibes");
                 $('#dlgEsperaM').modal();
             });

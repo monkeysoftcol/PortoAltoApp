@@ -19,8 +19,6 @@ module.controller('vipCtrl', ['$scope', '$http', '$localStorage', function ($sco
         $scope.infoUser = function () {
             if ($scope.obj.cedula) {
                 $http.get($scope.urlc + "/webservice.php?opc=100&cedula=" + $scope.obj.cedula, {}).success(function (data) {
-                    console.log(data);
-                    console.log(JSON.stringify(data));
                     if (data.codigo == 'OK') {
                         $scope.user = data.object;
 
@@ -50,16 +48,12 @@ module.controller('vipCtrl', ['$scope', '$http', '$localStorage', function ($sco
             if (error) {
                 return;
             }
-
+            $('#dlgLoading').modal();
             $http.get($scope.urlc + "/webservice.php?opc=1&cedula=" + $scope.obj.cedula + "&primerpaellido=" + $scope.obj.apellido + "&callback=?", {}
             ).success(function (data) {
-                console.log(JSON.stringify(data));
+                $('#dlgLoading').modal('hide');
                 if (data.codigo == 'OK') {
                     $scope.infoUser();
-                    $('#msgEsperaM').html("Bienvenido!!!!");
-                    $('#dlgEsperaM').modal();
-
-
                     $localStorage.login = true;
                     $localStorage.cedula = $scope.obj.cedula;
                     $localStorage.nombres = data.object.nombres + " " + data.object.apellidos;
@@ -81,11 +75,11 @@ module.controller('vipCtrl', ['$scope', '$http', '$localStorage', function ($sco
                 } else {
                     $localStorage.login = false;
                     data.object.login = false;
-                    $('#msgEsperaM').html(data);
+                    
                 }
-                $('#dlgEsperaM').modal();
+                
             }).error(function (data, status, headers, config) {
-
+                $('#dlgLoading').modal('hide');
                 $('#msgEsperaM').html("Los servicios web no están disponibes");
                 $('#dlgEsperaM').modal();
             });

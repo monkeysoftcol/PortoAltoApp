@@ -11,19 +11,18 @@ module.controller('reservasCtrl', ['$scope', '$http', '$localStorage', function 
 
 
         $scope.consultarReserva = function () {
-            console.log("******100******");
-           
             $http.get($scope.url + "&cedula=" + $localStorage.cedula, {}
             ).success(function (data) {
+                $('#dlgLoading').modal('hide');
                 if (data.codigo == 'OK') {
                     $scope.reservas = data.object;
                 } else {
                     $('#msgEsperaM').html(data.mensaje);
                     $('#dlgEsperaM').modal();
                 }
-                 $('#dlgEsperaM').modal('hide');
+                
             }).error(function (data, status, headers, config) {
-                $('#dlgEsperaM').modal('hide');
+                $('#dlgLoading').modal('hide');
                 $('#msgEsperaM').html("Los servicios web no están disponibes");
                 $('#dlgEsperaM').modal();
             });
@@ -31,8 +30,7 @@ module.controller('reservasCtrl', ['$scope', '$http', '$localStorage', function 
 
 
         $scope.loadinfo = function () {
-            $('#msgEsperaM').html("Consultado...");
-            $('#dlgEsperaM').modal();
+            $('#dlgLoading').modal();
             $scope.consultarReserva();
         }
         $scope.loadinfo();
@@ -45,7 +43,7 @@ module.controller('reservasCtrl', ['$scope', '$http', '$localStorage', function 
             $scope.reserva = document.getElementById("reservaId").value;
             console.log("Datos = " + $scope.estado + " >>> " + $scope.reserva);
             if ($scope.reserva) {
-                console.log("Cancelando reserva..");
+                
                 $scope.obj = {};
                 $scope.obj.idReserva = $scope.reserva;
 

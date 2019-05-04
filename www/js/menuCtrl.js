@@ -13,7 +13,7 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
                               $("#btnNext").click();
                         }
                   }
-
+                  //alert(fingerCount +">>>"+duration);
             },
             //Default is 75px, set to 0 for demo so any distance triggers swipe
             threshold: 0
@@ -21,6 +21,22 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
 
       $('#mybook').booklet();
 
+      $("#gear").mlens(
+            {
+                  imgSrc: $("#gear").attr("data-big"),	  // path of the hi-res version of the image
+                  imgSrc2x: $("#gear").attr("data-big2x"),  // path of the hi-res @2x version of the image
+                  //for retina displays (optional)
+                  lensShape: "circle",                // shape of the lens (circle/square)
+                  lensSize: ["20%", "30%"],            // lens dimensions (in px or in % with respect to image dimensions)
+                  // can be different for X and Y dimension
+                  borderSize: 2,                  // size of the lens border (in px)
+                  borderColor: "#fff",            // color of the lens border (#hex)
+                  borderRadius: 0,                // border radius (optional, only if the shape is square)
+                  imgOverlay: $("#gear").attr("data-overlay"), // path of the overlay image (optional)
+                  overlayAdapt: false,    // true if the overlay image has to adapt to the lens size (boolean)
+                  zoomLevel: 1,          // zoom level multiplicator (number)
+                  responsive: true       // true if mlens has to be responsive (boolean)
+            });
 
       console.log("menu cargado!!!!");
       $scope.url = '';
@@ -69,17 +85,17 @@ module.controller('menuCtrl', ['$scope', '$http', '$localStorage', function ($sc
       $scope.listMenu = [];
       $scope.viewDetail = false;
       $scope.base = "http://www.portoalto.com.co/servicios/v1/";
-      $scope.titulo="Nuestra Carta";
-      $scope.totalRegistros=12;
+      $scope.titulo = "Nuestra Carta";
+      $scope.totalRegistros = 12;
 
-      $scope.loadMenuCategoria = function (categoria,texto) {
+      $scope.loadMenuCategoria = function (categoria, texto) {
             $http.get($scope.base + "menu/count/" + categoria, {}
             ).success(function (data) {
                   console.log(JSON.stringify(data));
                   $('#dlgLoading').modal('hide');
                   if (data.status === 'SUCCESS') {
                         $scope.totalRegistros = data.object;
-                        $scope.loadMenuCategoriaDetalle(categoria,texto);
+                        $scope.loadMenuCategoriaDetalle(categoria, texto);
                   } else {
                         $('#msgEsperaM').html(data.message);
                         $('#dlgEsperaM').modal();

@@ -10,11 +10,10 @@ module.controller('promoCtrl', ['$scope', '$http', '$localStorage', function ($s
 
 
         $scope.loadinfo = function () {
-            $('#msgEsperaM').html("Consultado...");
-            $('#dlgEsperaM').modal();
+            $('#dlgLoading').modal();
             $http.get($scope.url, {}
             ).success(function (data) {
-                $('#dlgEsperaM').modal('hide');
+                $('#dlgLoading').modal('hide');
                 if (data.codigo == 'OK') {
                     $scope.promociones = data.object;
                 } else {
@@ -22,7 +21,7 @@ module.controller('promoCtrl', ['$scope', '$http', '$localStorage', function ($s
                     $('#dlgEsperaM').modal();
                 }
             }).error(function (data, status, headers, config) {
-                $('#dlgEsperaM').modal('hide');
+                $('#dlgLoading').modal('hide');
                 $('#msgEsperaM').html("Los servicios web no están disponibes");
                 $('#dlgEsperaM').modal();
             });

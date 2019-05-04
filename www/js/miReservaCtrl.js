@@ -14,9 +14,9 @@ module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function
     $scope.consultarReserva = function(){
         $http.get($scope.url + "&cedula=" + $scope.cedula, {}
         ).success(function (data) {
+            $('#dlgLoading').modal('hide');
             $scope.reserva = data;
             document.getElementById("datosult_reserva").innerHTML = $scope.reserva;
-            $('#dlgEsperaM').modal('hide');
             $scope.estado = document.getElementById("estadoR").value;
             $scope.reserva = document.getElementById("reservaId").value;
 
@@ -24,7 +24,7 @@ module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function
 
 
         }).error(function (data, status, headers, config) {
-            $('#dlgEsperaM').modal('hide');
+            $('#dlgLoading').modal('hide');
             $('#msgEsperaM').html("Los servicios web no están disponibes");
             $('#dlgEsperaM').modal();
         });
@@ -32,8 +32,7 @@ module.controller('miReservaCtrl', ['$scope', '$http', '$localStorage', function
 
     
     $scope.loadinfo = function () {
-        $('#msgEsperaM').html("Consultado...");
-        $('#dlgEsperaM').modal();
+        $('#dlgLoading').modal();
         $scope.consultarReserva();
     }
     $scope.loadinfo();
