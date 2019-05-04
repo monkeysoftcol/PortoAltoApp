@@ -51,7 +51,7 @@ module.controller('vipCtrl', ['$scope', '$http', '$localStorage', function ($sco
             $('#dlgLoading').modal();
             $http.get($scope.urlc + "/webservice.php?opc=1&cedula=" + $scope.obj.cedula + "&primerpaellido=" + $scope.obj.apellido + "&callback=?", {}
             ).success(function (data) {
-                $('#dlgLoading').modal('hide');
+                //console.log(JSON.stringify(data));
                 if (data.codigo == 'OK') {
                     $scope.infoUser();
                     $localStorage.login = true;
@@ -161,15 +161,15 @@ module.controller('vipCtrl', ['$scope', '$http', '$localStorage', function ($sco
 
                     $localStorage.tipo = "cliente";
                     $localStorage.cedula = $scope.obj.ndoc;
-                    $localStorage.nombres = $scope.obj.nombres + " " + $scope.obj.apellidos;
+                    $localStorage.nombres = $scope.obj.nombres + " " +$scope.obj.apellidos;
                     $localStorage.email = $scope.obj.email;
-                    $localStorage.telefono = $scope.obj.telefono;
+                    $localStorage.telefono = $scope.obj.celular;
 
-                    sessionStorage.nombres = $scope.obj.nombres + " " + $scope.obj.apellidos;
-                    sessionStorage.cedula = $scope.obj.ndoc;
                     sessionStorage.tipo = "cliente";
-                    sessionStorage.email =  $scope.obj.email;
-                    sessionStorage.telefono =  $scope.obj.telefono;
+                    sessionStorage.cedula = $scope.obj.ndoc;
+                    sessionStorage.nombres = $scope.obj.nombres + " " + $scope.obj.apellidos;
+                    sessionStorage.email = $scope.obj.email;
+                    sessionStorage.telefono = $scope.obj.celular;
 
                     $localStorage.login = true;
                     sessionStorage.login = true;
@@ -232,6 +232,9 @@ module.controller('vipCtrl', ['$scope', '$http', '$localStorage', function ($sco
                     $localStorage.tipo = "portero";
                     sessionStorage.cedula = $scope.obj.usuario;
                     sessionStorage.tipo = "portero";
+                    
+                    $localStorage.portero = true;
+                    sessionStorage.portero = true;
 
                 } else {
                     $('#msgEsperaM').html("El usuario o la contraseña es incorrecta!!");
