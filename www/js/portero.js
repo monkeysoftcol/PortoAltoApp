@@ -98,7 +98,7 @@ module.controller('porteroQrCtrl', ['$scope', '$http', '$localStorage', function
                 $scope.cedula = sessionStorage.cliente;
             }
 
-            $http.get($scope.urlc + "/webservice.php?opc=8&ruta=http://www.portoalto.com.co&cedula=" + $scope.cedula, {}
+            $http.get($scope.urlc + "/webservice.php?opc=8&ruta=http://www.movil.portoalto.com.co&cedula=" + $scope.cedula, {}
             ).success(function (data) {
                 document.getElementById("result_escaneo").innerHTML = data;
                 $scope.estado = document.getElementById("txtestadoReserva").value;
@@ -116,7 +116,7 @@ module.controller('porteroQrCtrl', ['$scope', '$http', '$localStorage', function
 
                 $scope.cedula = result.text;
                 alert("Cedula " + result.text);
-                $http.get($scope.urlc + "/webservice.php?opc=8&ruta=http://www.portoalto.com.co&cedula=" + $scope.cedula, {}
+                $http.get($scope.urlc + "/webservice.php?opc=8&ruta=http://www.movil.portoalto.com.co&cedula=" + $scope.cedula, {}
                 ).success(function (data) {
                     document.getElementById("result_escaneo").innerHTML = data;
                     $scope.estado = document.getElementById("txtestadoReserva").value;
@@ -138,7 +138,7 @@ module.controller('porteroQrCtrl', ['$scope', '$http', '$localStorage', function
         $scope.cancelar = function () {
             $scope.obj = {};
             $scope.errores = {};
-            window.location.href = './portero.html#/home';
+            window.location.href = './index.html#/home';
         }
 
         $scope.confirmar = function () {
@@ -156,7 +156,7 @@ module.controller('porteroQrCtrl', ['$scope', '$http', '$localStorage', function
             }
 
             //http://www.portoalto.com.co/webservice.php?opc=8&ruta=http://www.portoalto.com.co&cedula=1111
-            $http.get($scope.urlc + "/webservice.php?opc=9&ruta=http://www.portoalto.com.co&reservaId=" + $scope.idreserva, {}
+            $http.get($scope.urlc + "/webservice.php?opc=9&ruta=http://www.movil.portoalto.com.co&reservaId=" + $scope.idreserva, {}
             ).success(function (data) {
                 if (data == "Guardardo") {
                     $('#msgEsperaM').html("Cliente Confirmado Correctamente");
@@ -274,7 +274,7 @@ module.controller('porteroLoginCtrl', ['$scope', '$http', '$localStorage', funct
 
             $http.get($scope.urlc + "/webservice.php?opc=7&usuario=" + $scope.obj.usuario + "&pass=" + $scope.obj.password, {}).success(function (data) {
                 if (data == '0') {
-                    $('#msgEsperaM').html("Bienvenido!!");
+                    //$('#msgEsperaM').html("Bienvenido!!");
                     
                     window.location.href = './index.html#/validarr';
                     $localStorage.cedula = $scope.obj.usuario;
