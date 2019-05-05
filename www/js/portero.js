@@ -290,10 +290,9 @@ module.controller('porteroLoginCtrl', ['$scope', '$http', '$localStorage', funct
 
                 } else {
                     $('#msgEsperaM').html("El usuario o la contraseña es incorrecta!!");
+                    $('#dlgEsperaM').modal();
                 }
-                $('#dlgEsperaM').modal();
             }).error(function (data, status, headers, config) {
-
                 $('#msgEsperaM').html("Los servicios web no están disponibes");
                 $('#dlgEsperaM').modal();
             });

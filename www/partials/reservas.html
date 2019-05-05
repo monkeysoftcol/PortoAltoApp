@@ -20,6 +20,7 @@
                 <li class="list-group-item" style="background: #e4e4e4;">Fecha reserva  : {{reserva.fechar}}</li>
                 <li class="list-group-item" style="background: #e4e4e4;">Fecha creación : {{reserva.fechac}}</li>
                 <li class="list-group-item" style="background: #e4e4e4;">Nro. personas  : {{reserva.npersonas}}</li>
+                <li class="list-group-item" style="background: #e4e4e4;" ng-show="reserva.decoracion">Decoración  : {{reserva.decoracion}}</li>
                 <li class="list-group-item" style="background: #e4e4e4;">Valor total  : {{reserva.total!=null?reserva.total:'0' | currency}}</li>
                 <li class="list-group-item" style="background: #e4e4e4;">Valor descuento  : {{reserva.descuento | currency}}</li>
                 <li class="list-group-item" style="background: #e4e4e4;">Total pago  : {{reserva.totald | currency}}</li>
