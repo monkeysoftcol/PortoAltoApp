@@ -5,6 +5,7 @@ module.controller('homeCtrl', ['$scope', '$http', '$localStorage', function ($sc
     $scope.myFunction(false);
 
     $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=12&buscador=";
+    $scope.urlactualiza ="http://www.movil.portoalto.com.co/webservice.php?opc=21";
     $scope.promociones = [];
     $("html, body").animate({ scrollTop: 0 }, 600);
     $scope.filtro = '';
@@ -24,6 +25,13 @@ module.controller('homeCtrl', ['$scope', '$http', '$localStorage', function ($sc
             $('#msgEsperaM').html("Los servicios web no están disponibes");
             $('#dlgEsperaM').modal();
         });
+
+
+        $http.get($scope.urlactualiza, {}
+            ).success(function (data) {
+               //console.log("Actualizadno...."+data) ;
+            }).error(function (data) {
+            });
     }
     $scope.loadinfo(false);
 
