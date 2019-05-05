@@ -15,7 +15,8 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', '$location
         }
 
 
-        $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=3";//decoración
+        //$scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=3";//decoración
+        $scope.url = "http://www.movil.portoalto.com.co/webservice.php?opc=20";//decoración
         $scope.urlb = "http://www.movil.portoalto.com.co/webservice.php?opc=4";
         $scope.urlc = "http://www.movil.portoalto.com.co/webservice.php?opc=6";
 
@@ -26,33 +27,19 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', '$location
         $scope.listaMesas;
         $scope.listDecoracion = [];
 
-        $scope.listaDecoreaciones = [];
+        $scope.listaDecoraciones = [];
         $scope.decoracionSelected;
         $scope.acepta = false;
 
         $scope.infoUser = {};
 
-        $scope.test = function () {
-            $http.get("http://www.movil.portoalto.com.co/webservice.php?opc=16", {}
-            ).success(function (data) {
-                $scope.listaDecoreaciones = data;
-            }).error(function (data, status, headers, config) {
-                $('#dlgEsperaM').modal('hide');
-                $('#msgEsperaM').html("Los servicios web no están disponibes");
-                $('#dlgEsperaM').modal();
-            });
-        }
-        //$scope.test();
-
-
         $scope.loadpromociones = function () {
-            $('#msgEsperaM').html("Consultado...");
-            $('#dlgEsperaM').modal();
             $http.get($scope.url, {}
             ).success(function (data) {
-                $scope.promociones = data;
-                document.getElementById("div_promos").innerHTML = $scope.promociones;
-                $('#dlgEsperaM').modal('hide');
+                $scope.listaDecoraciones = data.object;
+                console.log(data);
+                //document.getElementById("div_promos").innerHTML = $scope.promociones;
+                //$('#dlgEsperaM').modal('hide');
 
                 //$('#msgEsperaM').html("Para garantizar su reserva, el consumo mínimo debe ser no inferior a 30.000 pesos por persona.");
                 //$('#dlgEsperaM').modal();
@@ -97,16 +84,11 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', '$location
             $scope.obj.cedula = $localStorage.cedula;
             var error = false;
 
-            $scope.obj.decora = document.getElementById("decora").value;
+            //$scope.obj.decora = document.getElementById("decora").value;
             $scope.obj.horaReserva = document.getElementById("hora_reserva").value;
             $scope.obj.personas = document.getElementById("personas").value;
 
-            if (!$scope.obj.decora) {
-                $scope.errores.tdecoracion = 'Campo obligatorio';
-                error = true;
-            } else {
-                $scope.errores.tdecoracion = '';
-            }
+            
             if (!$scope.obj.fecha) {
                 $scope.errores.fecha = 'Campo obligatorio';
                 error = true;
@@ -156,13 +138,18 @@ module.controller('reservaCtrl', ['$scope', '$http', '$localStorage', '$location
             if (error) {
                 return;
             }
+            var decoracion =-1;
+            if($scope.decoracionSelected){
+                decoracion = $scope.decoracionSelected.id;
+            }
 
-            $http.get($scope.urlc + "&cedula=" + $scope.obj.cedula + "&mesa=" + $scope.obj.mesa + "&fecha_reserva=" + $scope.obj.fecha + "&hora_reserva=" + $scope.obj.horaReserva + "&decora=" + $scope.obj.decora + "&personas=" + $scope.obj.personas + "&motivo=" + $scope.obj.motivo, {}
+            $http.get($scope.urlc + "&cedula=" + $scope.obj.cedula + "&mesa=" + $scope.obj.mesa + "&fecha_reserva=" + $scope.obj.fecha + "&hora_reserva=" + $scope.obj.horaReserva + "&decora=" + decoracion + "&personas=" + $scope.obj.personas + "&motivo=" + $scope.obj.motivo, {}
             ).success(function (data) {
                 if (data == 'Guardada') {
-                    $('#msgEsperaM').html("Tu Reserva Ha Sido Apartada - Gracias Por Confiar En Nosotros");
+                    $('#msgEsperaM').html("Tu Reserva ha sido apartada. Dirigete a la opción Mi ultima reserva para realizar el pago. Gracias Por Confiar En Nosotros");
                     $scope.errores = {};
                     $scope.obj = {};
+                    $scope.decoracionSelected=null;
                 } else {
                     $('#msgEsperaM').html(data);
                 }

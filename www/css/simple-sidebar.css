@@ -18,7 +18,7 @@ body {
 }
 
 #wrapper.toggled {
-  padding-left: 99%;
+  padding-left: 100%;
 }
 
 #sidebar-wrapper {
@@ -71,7 +71,7 @@ body {
 .sidebar-nav {
   position: absolute;
   top: 60px;
-  width: 99%;
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;

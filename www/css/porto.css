@@ -1,6 +1,8 @@
+
 body {
     position: static;
     background-color: #404245;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .footer {

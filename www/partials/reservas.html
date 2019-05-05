@@ -20,10 +20,9 @@
                 <li class="list-group-item" style="background: #e4e4e4;">Fecha reserva  : {{reserva.fechar}}</li>
                 <li class="list-group-item" style="background: #e4e4e4;">Fecha creación : {{reserva.fechac}}</li>
                 <li class="list-group-item" style="background: #e4e4e4;">Nro. personas  : {{reserva.npersonas}}</li>
-                <li class="list-group-item" style="background: #e4e4e4;">Valor x persona  : ${{reserva.unitario!=null?reserva.unitario:'0'}}</li>
-                <li class="list-group-item" style="background: #e4e4e4;">Valor total  : ${{reserva.total!=null?reserva.total:'0'}}</li>
-                <li class="list-group-item" style="background: #e4e4e4;">Valor descuento  : ${{reserva.descuento}}</li>
-                <li class="list-group-item" style="background: #e4e4e4;">Total pago  : ${{reserva.totald}}</li>
+                <li class="list-group-item" style="background: #e4e4e4;">Valor total  : {{reserva.total!=null?reserva.total:'0' | currency}}</li>
+                <li class="list-group-item" style="background: #e4e4e4;">Valor descuento  : {{reserva.descuento | currency}}</li>
+                <li class="list-group-item" style="background: #e4e4e4;">Total pago  : {{reserva.totald | currency}}</li>
             </ul>
         </div>
     </div>
